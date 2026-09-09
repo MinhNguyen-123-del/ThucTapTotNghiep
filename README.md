@@ -1,2 +1,0 @@
-# ThucTapTotNghiep
-ThucTapTotNghiep
