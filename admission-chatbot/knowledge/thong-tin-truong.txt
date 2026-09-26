@@ -1,0 +1,71 @@
+THÔNG TIN TỔNG QUAN VỀ NHÀ TRƯỜNG
+
+1. Thông tin chung
+
+Tên trường:
+[CẦN CẬP NHẬT]
+
+Tên viết tắt:
+[CẦN CẬP NHẬT]
+
+Địa chỉ:
+[CẦN CẬP NHẬT]
+
+Website:
+[CẦN CẬP NHẬT]
+
+Email:
+[CẦN CẬP NHẬT]
+
+Số điện thoại liên hệ:
+[CẦN CẬP NHẬT]
+
+2. Giới thiệu về nhà trường
+
+[CẦN CẬP NHẬT]
+
+Nhà trường đào tạo nguồn nhân lực trong nhiều lĩnh vực khác nhau, đáp ứng nhu cầu học tập của sinh viên và nhu cầu nhân lực của xã hội.
+
+Các chương trình đào tạo được tổ chức theo quy định của nhà trường và các quy định hiện hành về giáo dục đại học.
+
+3. Các đơn vị đào tạo
+
+Các khoa, viện hoặc đơn vị đào tạo của trường:
+
+[CẦN CẬP NHẬT]
+
+4. Các ngành đào tạo
+
+Nhà trường đào tạo nhiều ngành/chương trình đào tạo thuộc các lĩnh vực khác nhau.
+
+Thông tin chi tiết về từng ngành được quản lý riêng trong hệ thống MongoDB của chatbot, bao gồm:
+
+- Tên ngành
+- Mã ngành
+- Mô tả ngành
+- Học phí
+- Cơ hội việc làm
+- Khả năng học tập nâng cao
+- Chương trình đào tạo
+- Phương pháp giảng dạy
+- Thời gian đào tạo
+
+5. Thông tin liên hệ
+
+Thí sinh có thể liên hệ với nhà trường để được tư vấn và xác nhận những thông tin tuyển sinh chính thức.
+
+Đơn vị tư vấn tuyển sinh:
+[CẦN CẬP NHẬT]
+
+Số điện thoại:
+[CẦN CẬP NHẬT]
+
+Email:
+[CẦN CẬP NHẬT]
+
+Website tuyển sinh:
+[CẦN CẬP NHẬT]
+
+LƯU Ý
+
+Các thông tin có ký hiệu [CẦN CẬP NHẬT] cần được thay thế bằng thông tin chính thức của nhà trường trước khi đưa hệ thống vào sử dụng thực tế.

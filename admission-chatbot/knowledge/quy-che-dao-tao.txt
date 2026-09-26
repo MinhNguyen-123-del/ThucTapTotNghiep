@@ -1,0 +1,100 @@
+QUY CHẾ ĐÀO TẠO VÀ HỌC TẬP
+
+1. Tổng quan
+
+Sinh viên học tập và rèn luyện theo chương trình đào tạo và quy chế đào tạo của nhà trường.
+
+Các quy định cụ thể được thực hiện theo văn bản chính thức của nhà trường.
+
+2. Chương trình đào tạo
+
+Mỗi ngành học có chương trình đào tạo riêng.
+
+Chương trình đào tạo có thể bao gồm:
+
+- Các học phần đại cương.
+- Các học phần cơ sở ngành.
+- Các học phần chuyên ngành.
+- Các học phần thực hành.
+- Thực tập.
+- Đồ án hoặc khóa luận nếu chương trình đào tạo có quy định.
+
+Thông tin cụ thể của từng ngành được quản lý trong dữ liệu ngành học.
+
+3. Thời gian đào tạo
+
+Thời gian đào tạo:
+
+[CẦN CẬP NHẬT]
+
+Thời gian đào tạo thực tế của sinh viên có thể phụ thuộc vào chương trình đào tạo, tiến độ học tập và các quy định của nhà trường.
+
+4. Đánh giá kết quả học tập
+
+Sinh viên được đánh giá kết quả học tập thông qua các hình thức phù hợp với từng học phần.
+
+Có thể bao gồm:
+
+- Điểm chuyên cần.
+- Bài kiểm tra.
+- Bài tập.
+- Thuyết trình.
+- Thực hành.
+- Thi giữa kỳ.
+- Thi cuối kỳ.
+
+Hình thức đánh giá cụ thể phụ thuộc vào từng học phần.
+
+5. Điều kiện hoàn thành chương trình
+
+Để được công nhận hoàn thành chương trình đào tạo, sinh viên cần đáp ứng các yêu cầu do nhà trường quy định.
+
+Các điều kiện cụ thể:
+
+[CẦN CẬP NHẬT]
+
+Có thể bao gồm:
+
+- Hoàn thành đầy đủ các học phần bắt buộc.
+- Đạt đủ số tín chỉ theo chương trình.
+- Đạt yêu cầu về điểm trung bình.
+- Hoàn thành các yêu cầu thực tập hoặc khóa luận nếu có.
+- Hoàn thành các nghĩa vụ khác theo quy định.
+
+6. Điều kiện tốt nghiệp
+
+Điều kiện tốt nghiệp:
+
+[CẦN CẬP NHẬT]
+
+7. Xếp loại tốt nghiệp
+
+Các mức xếp loại:
+
+[CẦN CẬP NHẬT]
+
+Ví dụ cần cập nhật chính xác theo quy định của trường:
+
+- Xuất sắc.
+- Giỏi.
+- Khá.
+- Trung bình.
+- Các mức khác nếu có.
+
+Không sử dụng các ngưỡng GPA cụ thể nếu chưa được nhà trường xác nhận.
+
+8. Quy định học tập
+
+Sinh viên có trách nhiệm:
+
+- Tuân thủ nội quy và quy chế đào tạo.
+- Tham gia học tập đầy đủ.
+- Hoàn thành các học phần theo yêu cầu.
+- Thực hiện các quy định về kiểm tra và đánh giá.
+- Tuân thủ các quy định của nhà trường.
+
+9. Lưu ý
+
+Các quy định đào tạo có thể được cập nhật theo từng thời kỳ.
+
+Khi sinh viên hoặc thí sinh hỏi về quy định cụ thể, chatbot cần ưu tiên sử dụng văn bản chính thức được cập nhật trong Knowledge Base.

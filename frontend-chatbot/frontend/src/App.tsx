@@ -1,7 +1,21 @@
-import AppRoutes from './routes/AppRoutes'
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
 
-function App() {
-  return <AppRoutes />
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import AppRoutes from "./routes/AppRoutes";
+import { ChatWidget } from "./components/common/ChatWidget";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <AppRoutes />
+        <ChatWidget />
+      </AuthProvider>
+    </BrowserRouter>
+  );
 }
 
-export default App

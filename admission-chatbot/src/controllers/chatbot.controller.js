@@ -2,11 +2,13 @@ const aiService = require("../services/ai.service");
 
 const chat = async (req, res) => {
     try {
-        // Lấy câu hỏi người dùng gửi lên
         const question = req.body.question;
+        const sessionId = req.body.sessionId;
 
-        // Gọi AI Service xử lý
-        const answer = await aiService.askAI(question);
+        const answer = await aiService.askAI(
+            question,
+            sessionId
+        );
 
         res.json({
             success: true,
@@ -15,7 +17,8 @@ const chat = async (req, res) => {
         });
 
     } catch (error) {
-        // Công dụng: xử lý lỗi
+        console.error("CHATBOT ERROR:", error);
+
         res.status(500).json({
             success: false,
             message: error.message

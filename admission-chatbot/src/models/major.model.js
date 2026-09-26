@@ -1,25 +1,109 @@
 const mongoose = require("mongoose");
 
-// Schema lưu thông tin ngành học
-const majorSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
+// ======================================================
+// SCHEMA THÔNG TIN NGÀNH HỌC
+// ======================================================
 
-    code: {
-        type: String,
-        required: true
-    },
+const majorSchema = new mongoose.Schema(
+    {
+        // ==============================================
+        // THÔNG TIN CƠ BẢN
+        // ==============================================
 
-    description: {
-        type: String
-    },
+        name: {
+            type: String,
+            required: true,
+            trim: true
+        },
 
-    tuition: {
-        type: Number
+        code: {
+            type: String,
+            required: true,
+            trim: true
+        },
+
+        description: {
+            type: String,
+            default: ""
+        },
+
+        // ==============================================
+        // HỌC PHÍ
+        // ==============================================
+
+        tuition: {
+            type: Number,
+            default: null
+        },
+
+        // ==============================================
+        // CƠ HỘI VIỆC LÀM
+        // ==============================================
+
+        jobOpportunities: {
+            type: [String],
+            default: []
+        },
+
+        // ==============================================
+        // CƠ HỘI HỌC TẬP NÂNG CAO
+        // ==============================================
+
+        advancedStudy: {
+            type: [String],
+            default: []
+        },
+
+        // ==============================================
+        // CHƯƠNG TRÌNH ĐÀO TẠO
+        // ==============================================
+
+        trainingProgram: {
+            type: String,
+            default: ""
+        },
+
+        // ==============================================
+        // PHƯƠNG PHÁP GIẢNG DẠY
+        // ==============================================
+
+        teachingMethod: {
+            type: String,
+            default: ""
+        },
+studyDuration: {
+    type: String,
+    default: ""
+},
+        // ==============================================
+        // VỊ TRÍ / NGHỀ NGHIỆP SAU KHI TỐT NGHIỆP
+        // ==============================================
+
+        careerPaths: {
+            type: [String],
+            default: []
+        }
+    },
+    {
+        timestamps: true
     }
+);
+
+// ======================================================
+// INDEX
+// ======================================================
+
+majorSchema.index({
+    name: 1
 });
 
-// Tạo Model Major
-module.exports = mongoose.model("Major", majorSchema);
+majorSchema.index({
+    code: 1
+});
+
+// ======================================================
+// MODEL
+// ======================================================
+
+module.exports =
+    mongoose.model("Major", majorSchema);
