@@ -1,3 +1,4 @@
+import tftLogo from '../../assets/tft-logo.png';
 import { useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authService } from "../../services/auth.service";
@@ -81,14 +82,18 @@ function Register() {
           <div className="relative z-10 flex min-h-screen w-full flex-col justify-between p-12 xl:p-16">
             <div>
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-black text-xl font-bold text-[#7f8cff] shadow-lg">
-                  A
+                <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-black shadow-lg">
+                  <img
+                    src={tftLogo}
+                    alt="TFT Academy"
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <div>
                   <h1 className="text-xl font-bold text-white">
-                    Admission Chatbot
+                    TFT Academy
                   </h1>
-                  <p className="text-sm text-blue-100">AI hỗ trợ tuyển sinh</p>
+                  <p className="text-sm text-blue-100">Đào tạo nhân tài</p>
                 </div>
               </div>
             </div>
@@ -120,7 +125,7 @@ function Register() {
             </div>
 
             <div className="flex justify-center">
-              <p className="text-sm text-blue-200">© 2026 Admission Chatbot</p>
+              <p className="text-sm text-blue-200">© 2026 TFT Academy</p>
             </div>
           </div>
         </div>

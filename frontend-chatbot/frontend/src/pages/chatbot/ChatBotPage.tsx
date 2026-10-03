@@ -78,7 +78,7 @@ function ChatbotPage() {
   return (
     <div className="space-y-6">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-blue-700 via-indigo-700 to-slate-900 rounded-3xl p-6 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
+      <div className="bg-gradient-to-r from-fuchsia-700 via-violet-700 to-slate-900 rounded-3xl p-6 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-xs flex items-center justify-center text-white border border-white/20">
             <Bot className="w-7 h-7" />
@@ -90,7 +90,7 @@ function ChatbotPage() {
                 ONLINE 24/7
               </span>
             </div>
-            <p className="text-xs text-blue-100 mt-0.5">
+            <p className="text-xs text-pink-100 mt-0.5">
               Hệ thống trả lời tự động ngôn ngữ tự nhiên về ngành học, học phí, điểm chuẩn & xét tuyển đại học
             </p>
           </div>
@@ -118,7 +118,7 @@ function ChatbotPage() {
                 className={`flex gap-3 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {msg.sender === 'bot' && (
-                  <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                  <div className="w-9 h-9 rounded-xl bg-fuchsia-600 text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
                     <Bot className="w-5 h-5" />
                   </div>
                 )}
@@ -127,7 +127,7 @@ function ChatbotPage() {
                   <div
                     className={`rounded-2xl px-5 py-3.5 text-xs sm:text-sm leading-relaxed ${
                       msg.sender === 'user'
-                        ? 'bg-blue-600 text-white rounded-tr-xs shadow-xs'
+                        ? 'bg-fuchsia-600 text-white rounded-tr-xs shadow-xs'
                         : 'bg-white text-gray-800 border border-gray-200/80 shadow-xs rounded-tl-xs whitespace-pre-line'
                     }`}
                   >
@@ -142,7 +142,7 @@ function ChatbotPage() {
                           key={idx}
                           type="button"
                           onClick={() => handleSend(q)}
-                          className="text-xs bg-white hover:bg-blue-50 text-blue-600 hover:text-blue-700 font-medium px-3 py-1.5 rounded-full border border-blue-200/80 transition-colors shadow-2xs text-left cursor-pointer"
+                          className="text-xs bg-white hover:bg-pink-50 text-fuchsia-600 hover:text-fuchsia-700 font-medium px-3 py-1.5 rounded-full border border-pink-200/80 transition-colors shadow-2xs text-left cursor-pointer"
                         >
                           {q}
                         </button>
@@ -154,8 +154,8 @@ function ChatbotPage() {
                   {msg.cards && msg.cards.length > 0 && (
                     <div className="space-y-2 pt-1">
                       {msg.cards.map((card, idx) => (
-                        <div key={idx} className="bg-white p-4 rounded-xl border border-blue-100 shadow-xs">
-                          <h5 className="font-bold text-sm text-blue-900">{card.title}</h5>
+                        <div key={idx} className="bg-white p-4 rounded-xl border border-pink-100 shadow-xs">
+                          <h5 className="font-bold text-sm text-fuchsia-900">{card.title}</h5>
                           <p className="text-xs text-gray-500 mb-2">{card.description}</p>
                           <ul className="text-xs text-gray-600 space-y-1">
                             {card.details.map((d, dIdx) => (
@@ -183,13 +183,13 @@ function ChatbotPage() {
 
             {loading && (
               <div className="flex gap-3 items-center text-gray-400 text-xs italic">
-                <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                <div className="w-9 h-9 rounded-xl bg-fuchsia-600 text-white flex items-center justify-center shrink-0 shadow-xs">
                   <Bot className="w-5 h-5" />
                 </div>
                 <div className="bg-white border border-gray-200/80 px-4 py-3 rounded-2xl rounded-tl-xs shadow-xs flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-bounce"></span>
-                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-bounce [animation-delay:0.2s]"></span>
-                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-bounce [animation-delay:0.4s]"></span>
+                  <span className="w-2 h-2 rounded-full bg-fuchsia-600 animate-bounce"></span>
+                  <span className="w-2 h-2 rounded-full bg-fuchsia-600 animate-bounce [animation-delay:0.2s]"></span>
+                  <span className="w-2 h-2 rounded-full bg-fuchsia-600 animate-bounce [animation-delay:0.4s]"></span>
                   <span className="text-xs text-gray-500 ml-1">AI đang tra cứu dữ liệu tuyển sinh...</span>
                 </div>
               </div>
@@ -211,12 +211,12 @@ function ChatbotPage() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Đặt câu hỏi về ngành đào tạo, điểm chuẩn, hồ sơ, học bổng..."
-                className="flex-1 bg-gray-50 border border-gray-200 text-xs sm:text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:bg-white transition"
+                className="flex-1 bg-gray-50 border border-gray-200 text-xs sm:text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-fuchsia-500 focus:bg-white transition"
               />
               <button
                 type="submit"
                 disabled={!input.trim() || loading}
-                className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white px-5 py-3 rounded-xl transition shadow-xs flex items-center justify-center gap-2 cursor-pointer font-medium text-xs sm:text-sm"
+                className="bg-fuchsia-600 hover:bg-fuchsia-700 disabled:opacity-50 text-white px-5 py-3 rounded-xl transition shadow-xs flex items-center justify-center gap-2 cursor-pointer font-medium text-xs sm:text-sm"
               >
                 <span>Gửi</span>
                 <Send className="w-4 h-4" />
@@ -224,7 +224,7 @@ function ChatbotPage() {
             </form>
             <div className="mt-2 flex items-center justify-between text-[11px] text-gray-400">
               <span className="flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-blue-500" /> Hệ thống tự động thu thập SĐT để cán bộ tuyển sinh liên hệ
+                <Sparkles className="w-3 h-3 text-fuchsia-500" /> Hệ thống tự động thu thập SĐT để cán bộ tuyển sinh liên hệ
               </span>
               <span>Hotline: {UNIVERSITY_INFO.hotline}</span>
             </div>
@@ -236,7 +236,7 @@ function ChatbotPage() {
           {/* Quick Major Inquiries */}
           <div className="bg-white rounded-2xl border border-gray-200/80 p-5 shadow-xs">
             <div className="flex items-center gap-2 font-bold text-xs uppercase tracking-wider text-gray-400 mb-3">
-              <BookOpen className="w-4 h-4 text-blue-600" />
+              <BookOpen className="w-4 h-4 text-fuchsia-600" />
               <span>Tra Cứu Ngành Hot</span>
             </div>
             <div className="space-y-2">
@@ -245,15 +245,15 @@ function ChatbotPage() {
                   key={c.id}
                   type="button"
                   onClick={() => handleSend(`Thông tin tuyển sinh ngành ${c.name}`)}
-                  className="w-full text-left p-2.5 rounded-xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50/50 transition flex items-center justify-between group cursor-pointer"
+                  className="w-full text-left p-2.5 rounded-xl border border-gray-100 hover:border-pink-200 hover:bg-pink-50/50 transition flex items-center justify-between group cursor-pointer"
                 >
                   <div>
-                    <p className="text-xs font-semibold text-gray-800 group-hover:text-blue-600">
+                    <p className="text-xs font-semibold text-gray-800 group-hover:text-fuchsia-600">
                       {c.name}
                     </p>
                     <span className="text-[10px] text-gray-400">Điểm chuẩn: {c.previousCutoffScore}</span>
                   </div>
-                  <span className="text-xs text-blue-600 font-bold opacity-0 group-hover:opacity-100 transition">
+                  <span className="text-xs text-fuchsia-600 font-bold opacity-0 group-hover:opacity-100 transition">
                     →
                   </span>
                 </button>
@@ -264,35 +264,35 @@ function ChatbotPage() {
           {/* Common Topics */}
           <div className="bg-white rounded-2xl border border-gray-200/80 p-5 shadow-xs">
             <div className="flex items-center gap-2 font-bold text-xs uppercase tracking-wider text-gray-400 mb-3">
-              <HelpCircle className="w-4 h-4 text-indigo-600" />
+              <HelpCircle className="w-4 h-4 text-violet-600" />
               <span>Chủ Đề Phổ Biến</span>
             </div>
             <div className="flex flex-col gap-2">
               <button
                 type="button"
                 onClick={() => handleSend('Học phí của trường năm 2026 là bao nhiêu?')}
-                className="text-left text-xs text-gray-700 hover:text-blue-600 hover:bg-blue-50/60 p-2 rounded-lg transition text-left cursor-pointer"
+                className="text-left text-xs text-gray-700 hover:text-fuchsia-600 hover:bg-pink-50/60 p-2 rounded-lg transition text-left cursor-pointer"
               >
                 💰 Học phí và lộ trình đóng
               </button>
               <button
                 type="button"
                 onClick={() => handleSend('Chính sách học bổng dành cho tân sinh viên')}
-                className="text-left text-xs text-gray-700 hover:text-blue-600 hover:bg-blue-50/60 p-2 rounded-lg transition text-left cursor-pointer"
+                className="text-left text-xs text-gray-700 hover:text-fuchsia-600 hover:bg-pink-50/60 p-2 rounded-lg transition text-left cursor-pointer"
               >
                 🏆 Học bổng 30 tỷ đồng năm 2026
               </button>
               <button
                 type="button"
                 onClick={() => handleSend('Hồ sơ xét tuyển học bạ THPT cần chuẩn bị gì?')}
-                className="text-left text-xs text-gray-700 hover:text-blue-600 hover:bg-blue-50/60 p-2 rounded-lg transition text-left cursor-pointer"
+                className="text-left text-xs text-gray-700 hover:text-fuchsia-600 hover:bg-pink-50/60 p-2 rounded-lg transition text-left cursor-pointer"
               >
                 📑 Thủ tục nộp hồ sơ học bạ
               </button>
               <button
                 type="button"
                 onClick={() => handleSend('Ký túc xá và chỗ ở cho sinh viên ngoại tỉnh')}
-                className="text-left text-xs text-gray-700 hover:text-blue-600 hover:bg-blue-50/60 p-2 rounded-lg transition text-left cursor-pointer"
+                className="text-left text-xs text-gray-700 hover:text-fuchsia-600 hover:bg-pink-50/60 p-2 rounded-lg transition text-left cursor-pointer"
               >
                 🏢 Ký túc xá & đời sống sinh viên
               </button>
@@ -300,15 +300,15 @@ function ChatbotPage() {
           </div>
 
           {/* Admission Contact Hotline */}
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 p-5">
-            <div className="flex items-center gap-2 text-blue-900 font-bold text-xs uppercase tracking-wider mb-2">
-              <Phone className="w-4 h-4 text-blue-600" />
+          <div className="bg-gradient-to-br from-pink-50 to-violet-50 rounded-2xl border border-pink-100 p-5">
+            <div className="flex items-center gap-2 text-fuchsia-900 font-bold text-xs uppercase tracking-wider mb-2">
+              <Phone className="w-4 h-4 text-fuchsia-600" />
               <span>Cần Tư Vấn Trực Tiếp?</span>
             </div>
             <p className="text-xs text-gray-600 leading-relaxed mb-3">
               Bạn có thể để lại số điện thoại trong khung chat để cán bộ tư vấn gọi lại miễn phí!
             </p>
-            <div className="text-xs font-bold text-blue-700">
+            <div className="text-xs font-bold text-fuchsia-700">
               Hotline: {UNIVERSITY_INFO.hotline}
             </div>
             <div className="text-[11px] text-gray-500 mt-0.5">

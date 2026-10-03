@@ -129,7 +129,7 @@ function StudentsList() {
         <button
           type="button"
           onClick={handleOpenAddModal}
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
+          className="inline-flex items-center gap-2 bg-fuchsia-600 hover:bg-fuchsia-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Tiếp Nhận Hồ Sơ Mới</span>
@@ -145,7 +145,7 @@ function StudentsList() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Tìm theo tên, mã thí sinh, CCCD, SĐT..."
-            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-blue-500 focus:bg-white transition"
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-fuchsia-500 focus:bg-white transition"
           />
         </div>
 
@@ -155,7 +155,7 @@ function StudentsList() {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="bg-gray-50 border border-gray-200 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-blue-500"
+            className="bg-gray-50 border border-gray-200 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-fuchsia-500"
           >
             <option value="all">Tất cả ({students.length})</option>
             <option value="submitted">Đã tiếp nhận</option>
@@ -190,7 +190,7 @@ function StudentsList() {
                     <tr key={s.id} className="hover:bg-gray-50/80 transition">
                       <td className="px-6 py-4 font-semibold text-gray-900">
                         <div className="flex items-center gap-2.5">
-                          <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs">
+                          <div className="w-8 h-8 rounded-full bg-violet-100 text-violet-700 flex items-center justify-center font-bold text-xs">
                             {s.fullName.charAt(0)}
                           </div>
                           <div>
@@ -208,7 +208,7 @@ function StudentsList() {
                       <td className="px-6 py-4">
                         <p className="text-gray-700">{formatAdmissionMethod(s.admissionMethod)}</p>
                         <p className="text-[11px] text-gray-500">
-                          Điểm xét: <strong className="text-blue-600 font-bold">{s.totalScore}</strong>
+                          Điểm xét: <strong className="text-fuchsia-600 font-bold">{s.totalScore}</strong>
                         </p>
                       </td>
                       <td className="px-6 py-4 text-gray-600">
@@ -247,7 +247,7 @@ function StudentsList() {
                             type="button"
                             onClick={() => handleOpenEditModal(s)}
                             title="Sửa hồ sơ"
-                            className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition cursor-pointer"
+                            className="p-1.5 text-fuchsia-600 hover:bg-pink-50 rounded-lg transition cursor-pointer"
                           >
                             <Edit2 className="w-4 h-4" />
                           </button>
@@ -303,7 +303,7 @@ function StudentsList() {
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 placeholder="Nguyễn Văn A"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -313,7 +313,7 @@ function StudentsList() {
                 value={formData.cccd}
                 onChange={(e) => setFormData({ ...formData, cccd: e.target.value })}
                 placeholder="079..."
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500 font-mono"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500 font-mono"
               />
             </div>
           </div>
@@ -326,7 +326,7 @@ function StudentsList() {
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -335,7 +335,7 @@ function StudentsList() {
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -343,7 +343,7 @@ function StudentsList() {
               <select
                 value={formData.gender}
                 onChange={(e) => setFormData({ ...formData, gender: e.target.value as any })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="Nam">Nam</option>
                 <option value="Nữ">Nữ</option>
@@ -357,7 +357,7 @@ function StudentsList() {
               <select
                 value={formData.majorName}
                 onChange={(e) => setFormData({ ...formData, majorName: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="Công nghệ Thông tin">Công nghệ Thông tin</option>
                 <option value="Trí tuệ Nhân tạo (AI & Data Science)">Trí tuệ Nhân tạo (AI & Data Science)</option>
@@ -372,7 +372,7 @@ function StudentsList() {
               <select
                 value={formData.admissionMethod}
                 onChange={(e) => setFormData({ ...formData, admissionMethod: e.target.value as any })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="hoc_ba">Xét học bạ THPT</option>
                 <option value="thpt">Điểm thi Tốt nghiệp THPT</option>
@@ -390,7 +390,7 @@ function StudentsList() {
                 step="0.05"
                 value={formData.totalScore}
                 onChange={(e) => setFormData({ ...formData, totalScore: parseFloat(e.target.value) || 0 })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -398,7 +398,7 @@ function StudentsList() {
               <select
                 value={formData.applicationStatus}
                 onChange={(e) => setFormData({ ...formData, applicationStatus: e.target.value as any })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="submitted">Đã tiếp nhận</option>
                 <option value="validating">Đang thẩm định</option>
@@ -412,7 +412,7 @@ function StudentsList() {
               <select
                 value={formData.paymentStatus}
                 onChange={(e) => setFormData({ ...formData, paymentStatus: e.target.value as any })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="unpaid">Chưa thanh toán</option>
                 <option value="paid">Đã thanh toán</option>
@@ -430,7 +430,7 @@ function StudentsList() {
             </button>
             <button
               type="submit"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
+              className="px-5 py-2.5 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
             >
               {editingStudent ? 'Cập nhật hồ sơ' : 'Lưu Hồ Sơ Thí Sinh'}
             </button>

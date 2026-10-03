@@ -116,7 +116,7 @@ function PaymentsList() {
         <button
           type="button"
           onClick={handleOpenAddModal}
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
+          className="inline-flex items-center gap-2 bg-fuchsia-600 hover:bg-fuchsia-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Ghi Nhận Thu Tiền Mặt</span>
@@ -124,26 +124,26 @@ function PaymentsList() {
       </div>
 
       {/* Overview Card */}
-      <div className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white p-6 rounded-2xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-gradient-to-r from-fuchsia-700 to-violet-800 text-white p-6 rounded-2xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <span className="text-xs text-blue-200 uppercase tracking-wider font-semibold">
+          <span className="text-xs text-pink-200 uppercase tracking-wider font-semibold">
             Tổng Lệ Phí & Học Phí Đã Thu
           </span>
           <h2 className="text-3xl font-black mt-1">{formatCurrencyVND(totalCollected)}</h2>
-          <p className="text-xs text-blue-100 mt-1">
+          <p className="text-xs text-pink-100 mt-1">
             Bao gồm lệ phí xét học bạ, đánh giá năng lực và học phí học kỳ 1
           </p>
         </div>
 
         <div className="flex gap-3">
           <div className="bg-white/10 px-4 py-2 rounded-xl text-center">
-            <span className="text-[11px] text-blue-200">Giao dịch thành công</span>
+            <span className="text-[11px] text-pink-200">Giao dịch thành công</span>
             <p className="text-base font-bold">
               {payments.filter((p) => p.status === 'completed').length} / {payments.length}
             </p>
           </div>
           <div className="bg-white/10 px-4 py-2 rounded-xl text-center">
-            <span className="text-[11px] text-blue-200">Kênh thanh toán</span>
+            <span className="text-[11px] text-pink-200">Kênh thanh toán</span>
             <p className="text-base font-bold">VNPay / MoMo / CK</p>
           </div>
         </div>
@@ -158,7 +158,7 @@ function PaymentsList() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Tìm theo tên thí sinh, mã TS, mã giao dịch..."
-            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-blue-500 focus:bg-white transition"
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-fuchsia-500 focus:bg-white transition"
           />
         </div>
 
@@ -168,7 +168,7 @@ function PaymentsList() {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="bg-gray-50 border border-gray-200 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-blue-500"
+            className="bg-gray-50 border border-gray-200 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-fuchsia-500"
           >
             <option value="all">Tất cả giao dịch ({payments.length})</option>
             <option value="completed">Đã thanh toán (completed)</option>
@@ -210,7 +210,7 @@ function PaymentsList() {
                     <td className="px-6 py-4 text-gray-700">
                       {p.purpose === 'fee' ? 'Lệ phí xét tuyển hồ sơ' : 'Học phí tạm thu kỳ 1'}
                     </td>
-                    <td className="px-6 py-4 font-bold text-blue-600">
+                    <td className="px-6 py-4 font-bold text-fuchsia-600">
                       {formatCurrencyVND(p.amount)}
                     </td>
                     <td className="px-6 py-4 uppercase font-semibold text-gray-600">
@@ -242,7 +242,7 @@ function PaymentsList() {
                       <button
                         type="button"
                         onClick={() => handleToggleStatus(p)}
-                        className="text-xs font-medium text-blue-600 hover:text-blue-800 transition cursor-pointer"
+                        className="text-xs font-medium text-fuchsia-600 hover:text-fuchsia-800 transition cursor-pointer"
                       >
                         {p.status === 'completed' ? 'Đổi sang Chờ' : 'Duyệt thành công'}
                       </button>
@@ -277,7 +277,7 @@ function PaymentsList() {
               value={formData.studentName}
               onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
               placeholder="Nguyễn Văn A"
-              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
             />
           </div>
 
@@ -288,7 +288,7 @@ function PaymentsList() {
                 type="text"
                 value={formData.candidateCode}
                 onChange={(e) => setFormData({ ...formData, candidateCode: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500 font-mono"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500 font-mono"
               />
             </div>
             <div>
@@ -299,7 +299,7 @@ function PaymentsList() {
                 required
                 value={formData.amount}
                 onChange={(e) => setFormData({ ...formData, amount: parseInt(e.target.value) || 0 })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500 font-semibold"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500 font-semibold"
               />
             </div>
           </div>
@@ -310,7 +310,7 @@ function PaymentsList() {
               <select
                 value={formData.purpose}
                 onChange={(e) => setFormData({ ...formData, purpose: e.target.value as any })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="fee">Lệ phí xét tuyển hồ sơ</option>
                 <option value="tuition">Học phí kỳ 1</option>
@@ -321,7 +321,7 @@ function PaymentsList() {
               <select
                 value={formData.paymentMethod}
                 onChange={(e) => setFormData({ ...formData, paymentMethod: e.target.value as any })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="cash">Tiền mặt tại trường</option>
                 <option value="transfer">Chuyển khoản ngân hàng</option>
@@ -341,7 +341,7 @@ function PaymentsList() {
             </button>
             <button
               type="submit"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
+              className="px-5 py-2.5 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
             >
               Lưu Giao Dịch
             </button>

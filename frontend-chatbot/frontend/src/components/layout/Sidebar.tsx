@@ -45,10 +45,10 @@ function Sidebar() {
                     `flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium transition-all ${
                       isActive
                         ? item.highlight
-                          ? 'bg-blue-600 text-white shadow-sm shadow-blue-500/30'
-                          : 'bg-blue-50 text-blue-600 font-semibold'
+                          ? 'bg-fuchsia-600 text-white shadow-sm shadow-fuchsia-500/30'
+                          : 'bg-pink-50 text-fuchsia-600 font-semibold'
                         : item.highlight
-                        ? 'bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 hover:from-blue-100 hover:to-indigo-100 border border-blue-200/50'
+                        ? 'bg-gradient-to-r from-pink-50 to-violet-50 text-fuchsia-700 hover:from-pink-100 hover:to-violet-100 border border-pink-200/50'
                         : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                     }`
                   }
@@ -56,7 +56,7 @@ function Sidebar() {
                   <Icon className="w-4.5 h-4.5 shrink-0" />
                   <span className="truncate">{item.name}</span>
                   {item.highlight && (
-                    <span className="ml-auto inline-flex items-center text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded-full font-bold">
+                    <span className="ml-auto inline-flex items-center text-[10px] bg-pink-100 text-fuchsia-700 px-1.5 py-0.5 rounded-full font-bold">
                       AI
                     </span>
                   )}
@@ -68,9 +68,9 @@ function Sidebar() {
       </div>
 
       <div className="pt-4 border-t border-gray-100">
-        <div className="rounded-xl bg-gradient-to-br from-blue-500/10 to-indigo-500/10 p-3.5 border border-blue-100 text-xs">
-          <div className="flex items-center gap-2 text-blue-800 font-semibold mb-1">
-            <Sparkles className="w-4 h-4 text-blue-600" />
+        <div className="rounded-xl bg-gradient-to-br from-pink-500/10 to-teal-500/10 p-3.5 border border-pink-100 text-xs">
+          <div className="flex items-center gap-2 text-fuchsia-800 font-semibold mb-1">
+            <Sparkles className="w-4 h-4 text-fuchsia-600" />
             <span>Phân quyền Quản Trị</span>
           </div>
           <p className="text-gray-600 text-[11px] leading-relaxed">

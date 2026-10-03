@@ -143,7 +143,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3.5 group">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-fuchsia-600 via-pink-500 to-teal-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
               <GraduationCap className="w-6 h-6" />
             </div>
             <div>
@@ -151,7 +151,7 @@ export default function HomePage() {
                 <span className="font-extrabold text-lg sm:text-xl text-gray-900 tracking-tight">
                   ĐẠI HỌC TUYỂN SINH
                 </span>
-                <span className="bg-blue-100 text-blue-800 text-[10px] font-bold px-1.5 py-0.5 rounded-md uppercase tracking-wider">
+                <span className="bg-pink-100 text-fuchsia-800 text-[10px] font-bold px-1.5 py-0.5 rounded-md uppercase tracking-wider">
                   2026
                 </span>
               </div>
@@ -163,19 +163,19 @@ export default function HomePage() {
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-gray-600">
-            <a href="#nganh-dao-tao" className="hover:text-blue-600 transition">
+            <a href="#nganh-dao-tao" className="hover:text-fuchsia-600 transition">
               Ngành đào tạo
             </a>
-            <a href="#phuong-thuc" className="hover:text-blue-600 transition">
+            <a href="#phuong-thuc" className="hover:text-fuchsia-600 transition">
               Phương thức xét tuyển
             </a>
-            <a href="#tinh-diem" className="hover:text-blue-600 transition">
+            <a href="#tinh-diem" className="hover:text-fuchsia-600 transition">
               Tính điểm học bạ
             </a>
-            <a href="#hoc-phi" className="hover:text-blue-600 transition">
+            <a href="#hoc-phi" className="hover:text-fuchsia-600 transition">
               Học bổng & Học phí
             </a>
-            <a href="#faq" className="hover:text-blue-600 transition">
+            <a href="#faq" className="hover:text-fuchsia-600 transition">
               Hỏi đáp
             </a>
           </nav>
@@ -197,7 +197,7 @@ export default function HomePage() {
               ) : (
                 <Link
                   to="/user"
-                  className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-sm transition"
+                  className="flex items-center gap-2 bg-gradient-to-r from-fuchsia-600 via-pink-500 to-teal-500 hover:from-fuchsia-700 hover:to-violet-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-sm transition"
                 >
                   <UserCheck className="w-4 h-4" />
                   <span>Cổng Thí Sinh</span>
@@ -210,14 +210,14 @@ export default function HomePage() {
               <div className="flex items-center gap-2">
                 <Link
                   to="/login"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-700 hover:text-blue-600 px-3.5 py-2 rounded-xl hover:bg-gray-100 transition"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-700 hover:text-fuchsia-600 px-3.5 py-2 rounded-xl hover:bg-gray-100 transition"
                 >
                   <LogIn className="w-4 h-4" />
                   <span>Đăng nhập</span>
                 </Link>
                 <Link
                   to="/register"
-                  className="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-xs transition"
+                  className="inline-flex items-center gap-1.5 bg-fuchsia-600 hover:bg-fuchsia-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-xs transition"
                 >
                   <span>Nộp hồ sơ ngay</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -229,21 +229,21 @@ export default function HomePage() {
       </header>
 
       {/* 2. Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-blue-900 via-indigo-950 to-slate-900 text-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-b from-fuchsia-800 via-violet-800 to-teal-700 text-white py-20 lg:py-28">
         {/* Glow decorations */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-fuchsia-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-semibold px-4 py-1.5 rounded-full backdrop-blur-sm animate-pulse">
+            <div className="inline-flex items-center gap-2 bg-fuchsia-500/10 border border-pink-400/30 text-pink-300 text-xs font-semibold px-4 py-1.5 rounded-full backdrop-blur-sm animate-pulse">
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               <span>Chính thức mở cổng đăng ký xét tuyển Đại học năm 2026</span>
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
               Định Hình Tương Lai Cùng Các Ngành{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-sky-300 to-violet-300">
                 Công Nghệ & Kinh Doanh Số
               </span>
             </h1>
@@ -265,7 +265,7 @@ export default function HomePage() {
                     navigate("/register");
                   }
                 }}
-                className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg hover:shadow-blue-500/25 transition cursor-pointer flex items-center gap-2"
+                className="bg-gradient-to-r from-fuchsia-500 via-amber-400 to-teal-500 hover:from-fuchsia-600 hover:to-violet-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg hover:shadow-fuchsia-500/25 transition cursor-pointer flex items-center gap-2"
               >
                 <span>Nộp Hồ Sơ Trực Tuyến Ngay</span>
                 <ArrowRight className="w-4 h-4" />
@@ -302,7 +302,7 @@ export default function HomePage() {
       <section className="bg-white border-b border-gray-200 py-8 relative -mt-6 mx-4 sm:mx-8 lg:mx-auto max-w-6xl rounded-2xl shadow-xl z-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-6 divide-y md:divide-y-0 md:divide-x divide-gray-100 text-center">
           <div className="space-y-1">
-            <p className="text-2xl sm:text-3xl font-extrabold text-blue-600">
+            <p className="text-2xl sm:text-3xl font-extrabold text-fuchsia-600">
               3,500+
             </p>
             <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
@@ -310,7 +310,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="space-y-1 pt-4 md:pt-0">
-            <p className="text-2xl sm:text-3xl font-extrabold text-indigo-600">
+            <p className="text-2xl sm:text-3xl font-extrabold text-violet-600">
               15+
             </p>
             <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
@@ -339,7 +339,7 @@ export default function HomePage() {
       {/* 4. Phương thức xét tuyển 2026 */}
       <section id="phuong-thuc" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-14">
-          <div className="inline-block text-xs font-bold text-blue-600 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full uppercase tracking-wider">
+          <div className="inline-block text-xs font-bold text-fuchsia-600 bg-pink-50 border border-pink-200 px-3 py-1 rounded-full uppercase tracking-wider">
             Chính sách tuyển sinh
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -361,10 +361,10 @@ export default function HomePage() {
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition">
+                    <div className="w-12 h-12 rounded-xl bg-pink-50 text-fuchsia-600 flex items-center justify-center group-hover:bg-fuchsia-600 group-hover:text-white transition">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-100 px-2.5 py-0.5 rounded-full">
+                    <span className="text-[11px] font-bold text-violet-700 bg-violet-50 border border-violet-100 px-2.5 py-0.5 rounded-full">
                       {m.badge}
                     </span>
                   </div>
@@ -384,7 +384,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="pt-4 mt-4 border-t border-gray-100 flex items-center gap-1.5 text-[11px] text-gray-500 font-medium">
-                  <Calendar className="w-3.5 h-3.5 text-blue-500" />
+                  <Calendar className="w-3.5 h-3.5 text-fuchsia-500" />
                   <span>{m.time}</span>
                 </div>
               </div>
@@ -398,7 +398,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div className="space-y-2">
-              <div className="inline-block text-xs font-bold text-indigo-600 bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-full uppercase tracking-wider">
+              <div className="inline-block text-xs font-bold text-violet-600 bg-violet-50 border border-violet-200 px-3 py-1 rounded-full uppercase tracking-wider">
                 Chương trình đào tạo
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -416,7 +416,7 @@ export default function HomePage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Tìm kiếm ngành, mã ngành..."
-                className="w-full bg-white border border-gray-300 rounded-xl px-4 py-2.5 text-xs text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500 shadow-2xs"
+                className="w-full bg-white border border-gray-300 rounded-xl px-4 py-2.5 text-xs text-gray-800 placeholder-gray-400 focus:outline-none focus:border-fuchsia-500 shadow-2xs"
               />
             </div>
           </div>
@@ -429,7 +429,7 @@ export default function HomePage() {
               >
                 <div className="space-y-3.5">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-lg">
+                    <span className="font-mono text-xs font-bold text-fuchsia-600 bg-pink-50 px-2.5 py-1 rounded-lg">
                       {course.code}
                     </span>
                     <span className="text-xs font-semibold text-gray-500">
@@ -461,7 +461,7 @@ export default function HomePage() {
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-gray-500">Điểm chuẩn tham khảo:</span>
-                      <span className="font-bold text-indigo-600 font-mono">
+                      <span className="font-bold text-violet-600 font-mono">
                         {course.previousCutoffScore} điểm
                       </span>
                     </div>
@@ -477,7 +477,7 @@ export default function HomePage() {
                 <div className="pt-4">
                   <Link
                     to={isAuthenticated ? "/user/apply" : "/register"}
-                    className="w-full flex items-center justify-center gap-1.5 bg-gray-50 hover:bg-blue-600 text-gray-700 hover:text-white font-bold text-xs py-2.5 rounded-xl border border-gray-200 hover:border-blue-600 transition"
+                    className="w-full flex items-center justify-center gap-1.5 bg-gray-50 hover:bg-fuchsia-600 text-gray-700 hover:text-white font-bold text-xs py-2.5 rounded-xl border border-gray-200 hover:border-fuchsia-600 transition"
                   >
                     <span>Nộp hồ sơ ngành này</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -490,7 +490,7 @@ export default function HomePage() {
           <div className="text-center mt-10">
             <Link
               to={isAuthenticated ? "/user/majors" : "/login"}
-              className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 hover:text-blue-700 bg-white border border-blue-200 hover:border-blue-400 px-5 py-3 rounded-xl shadow-2xs transition"
+              className="inline-flex items-center gap-2 text-xs font-bold text-fuchsia-600 hover:text-fuchsia-700 bg-white border border-pink-200 hover:border-pink-400 px-5 py-3 rounded-xl shadow-2xs transition"
             >
               <span>Xem toàn bộ 15+ ngành đào tạo và chỉ tiêu chi tiết</span>
               <ArrowRight className="w-4 h-4" />
@@ -501,26 +501,26 @@ export default function HomePage() {
 
       {/* 6. Công cụ tính điểm học bạ tương tác */}
       <section id="tinh-diem" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-indigo-900 to-blue-900 rounded-3xl text-white p-8 lg:p-12 shadow-2xl overflow-hidden relative">
-          <div className="absolute right-0 top-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="bg-gradient-to-br from-fuchsia-700 via-amber-400 to-teal-600 rounded-3xl text-white p-8 lg:p-12 shadow-2xl overflow-hidden relative">
+          <div className="absolute right-0 top-0 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left col */}
             <div className="lg:col-span-6 space-y-4">
-              <div className="inline-block text-xs font-bold bg-blue-500/20 text-blue-200 border border-blue-400/30 px-3 py-1 rounded-full uppercase tracking-wider">
+              <div className="inline-block text-xs font-bold bg-fuchsia-500/20 text-pink-200 border border-pink-400/30 px-3 py-1 rounded-full uppercase tracking-wider">
                 Công cụ hỗ trợ
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
                 Dự Đoán Điểm & Khả Năng Trúng Tuyển Sớm
               </h2>
-              <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">
+              <p className="text-xs sm:text-sm text-pink-100 leading-relaxed">
                 Nhập điểm trung bình các môn theo tổ hợp môn học bạ THPT để tính
                 ngay tổng điểm và kiểm tra khả năng đỗ vào các ngành top đầu năm 2026.
               </p>
 
               <div className="bg-white/10 rounded-2xl p-5 border border-white/15 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-blue-200">Tổ hợp môn đang chọn:</span>
+                  <span className="text-xs text-pink-200">Tổ hợp môn đang chọn:</span>
                   <div className="flex gap-2">
                     {["A00", "A01", "D01"].map((c) => (
                       <button
@@ -529,7 +529,7 @@ export default function HomePage() {
                         onClick={() => setCalcCombo(c)}
                         className={`text-xs font-mono font-bold px-3 py-1 rounded-lg transition cursor-pointer ${
                           calcCombo === c
-                            ? "bg-blue-500 text-white shadow-sm"
+                            ? "bg-fuchsia-500 text-white shadow-sm"
                             : "bg-white/10 text-gray-300 hover:bg-white/20"
                         }`}
                       >
@@ -541,7 +541,7 @@ export default function HomePage() {
 
                 <div className="grid grid-cols-3 gap-3 pt-2">
                   <div>
-                    <label className="block text-[11px] text-blue-200 mb-1">
+                    <label className="block text-[11px] text-pink-200 mb-1">
                       {calcCombo === "D01" ? "Ngữ Văn" : "Toán"}
                     </label>
                     <input
@@ -555,7 +555,7 @@ export default function HomePage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] text-blue-200 mb-1">
+                    <label className="block text-[11px] text-pink-200 mb-1">
                       {calcCombo === "A00" ? "Vật lý" : calcCombo === "A01" ? "Vật lý" : "Toán"}
                     </label>
                     <input
@@ -569,7 +569,7 @@ export default function HomePage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] text-blue-200 mb-1">
+                    <label className="block text-[11px] text-pink-200 mb-1">
                       {calcCombo === "A00" ? "Hóa học" : "Tiếng Anh"}
                     </label>
                     <input
@@ -593,7 +593,7 @@ export default function HomePage() {
                   <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
                     Tổng điểm tổ hợp {calcCombo}
                   </span>
-                  <div className="text-3xl sm:text-4xl font-extrabold text-blue-600 font-mono">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-fuchsia-600 font-mono">
                     {totalCalcScore} <span className="text-sm font-normal text-gray-400">/ 30.00</span>
                   </div>
                 </div>
@@ -616,21 +616,21 @@ export default function HomePage() {
                     </div>
                   )}
                   {Number(totalCalcScore) >= 24.5 && (
-                    <div className="p-2.5 rounded-xl bg-blue-50 text-blue-900 flex items-center justify-between">
+                    <div className="p-2.5 rounded-xl bg-pink-50 text-fuchsia-900 flex items-center justify-between">
                       <span className="font-semibold">Công nghệ Thông tin (Chuẩn 25.0)</span>
-                      <span className="text-blue-700 font-bold">Đủ điều kiện</span>
+                      <span className="text-fuchsia-700 font-bold">Đủ điều kiện</span>
                     </div>
                   )}
-                  <div className="p-2.5 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-between">
+                  <div className="p-2.5 rounded-xl bg-violet-50 text-violet-900 flex items-center justify-between">
                     <span className="font-semibold">Quản trị Kinh doanh / Marketing (Chuẩn 23.0)</span>
-                    <span className="text-indigo-700 font-bold">Đủ điều kiện</span>
+                    <span className="text-violet-700 font-bold">Đủ điều kiện</span>
                   </div>
                 </div>
               </div>
 
               <Link
                 to={isAuthenticated ? "/user/apply" : "/register"}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-3 rounded-xl flex items-center justify-center gap-2 transition shadow-sm"
+                className="w-full bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold text-xs py-3 rounded-xl flex items-center justify-center gap-2 transition shadow-sm"
               >
                 <span>Nộp hồ sơ ngay với mức điểm này</span>
                 <ArrowRight className="w-4 h-4" />
@@ -644,7 +644,7 @@ export default function HomePage() {
       <section className="py-20 bg-white border-t border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center space-y-3 mb-10">
-            <span className="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+            <span className="text-xs font-bold text-fuchsia-600 uppercase tracking-wider bg-pink-50 px-3 py-1 rounded-full border border-pink-200">
               Đồng hành cùng bạn
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -678,7 +678,7 @@ export default function HomePage() {
                       value={leadName}
                       onChange={(e) => setLeadName(e.target.value)}
                       placeholder="Ví dụ: Trần Minh Hoàng"
-                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-blue-500 shadow-2xs"
+                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-fuchsia-500 shadow-2xs"
                     />
                   </div>
                   <div>
@@ -691,7 +691,7 @@ export default function HomePage() {
                       value={leadPhone}
                       onChange={(e) => setLeadPhone(e.target.value)}
                       placeholder="0912 345 678"
-                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-blue-500 shadow-2xs"
+                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-fuchsia-500 shadow-2xs"
                     />
                   </div>
                 </div>
@@ -706,7 +706,7 @@ export default function HomePage() {
                       value={leadEmail}
                       onChange={(e) => setLeadEmail(e.target.value)}
                       placeholder="email@example.com"
-                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-blue-500 shadow-2xs"
+                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-fuchsia-500 shadow-2xs"
                     />
                   </div>
                   <div>
@@ -716,7 +716,7 @@ export default function HomePage() {
                     <select
                       value={leadMajor}
                       onChange={(e) => setLeadMajor(e.target.value)}
-                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-blue-500 shadow-2xs cursor-pointer"
+                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-fuchsia-500 shadow-2xs cursor-pointer"
                     >
                       {courses.map((c) => (
                         <option key={c.id} value={c.name}>
@@ -730,7 +730,7 @@ export default function HomePage() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-3.5 rounded-xl shadow-md transition cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold text-xs py-3.5 rounded-xl shadow-md transition cursor-pointer flex items-center justify-center gap-2"
                   >
                     <Send className="w-4 h-4" />
                     <span>Gửi Thông Tin Nhận Tư Vấn</span>
@@ -745,7 +745,7 @@ export default function HomePage() {
       {/* 8. Hỏi Đáp Thường Gặp (FAQ) */}
       <section id="faq" className="py-20 max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center space-y-3 mb-12">
-          <span className="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+          <span className="text-xs font-bold text-fuchsia-600 uppercase tracking-wider bg-pink-50 px-3 py-1 rounded-full border border-pink-200">
             Giải đáp thắc mắc
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -765,12 +765,12 @@ export default function HomePage() {
                 className="w-full p-5 text-left flex items-center justify-between font-bold text-xs sm:text-sm text-gray-900 cursor-pointer hover:bg-gray-50"
               >
                 <div className="flex items-center gap-3">
-                  <HelpCircle className="w-4 h-4 text-blue-600 shrink-0" />
+                  <HelpCircle className="w-4 h-4 text-fuchsia-600 shrink-0" />
                   <span>{faq.q}</span>
                 </div>
                 <ChevronDown
                   className={`w-4 h-4 text-gray-400 transition-transform ${
-                    openFaq === idx ? "rotate-180 text-blue-600" : ""
+                    openFaq === idx ? "rotate-180 text-fuchsia-600" : ""
                   }`}
                 />
               </button>
@@ -790,7 +790,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-3 md:col-span-1">
             <div className="flex items-center gap-2 text-white font-bold text-base">
-              <GraduationCap className="w-5 h-5 text-blue-400" />
+              <GraduationCap className="w-5 h-5 text-pink-400" />
               <span>ĐẠI HỌC TUYỂN SINH 2026</span>
             </div>
             <p className="text-[11px] text-gray-400 leading-relaxed">
@@ -828,15 +828,15 @@ export default function HomePage() {
               Liên hệ hội đồng tuyển sinh
             </h4>
             <div className="flex items-center gap-2 text-[11px]">
-              <Phone className="w-3.5 h-3.5 text-blue-400" />
+              <Phone className="w-3.5 h-3.5 text-pink-400" />
               <span>Hotline: 1900 6868 (Phím 1)</span>
             </div>
             <div className="flex items-center gap-2 text-[11px]">
-              <Mail className="w-3.5 h-3.5 text-blue-400" />
+              <Mail className="w-3.5 h-3.5 text-pink-400" />
               <span>tuyensinh2026@admission.edu.vn</span>
             </div>
             <div className="flex items-start gap-2 text-[11px]">
-              <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
+              <MapPin className="w-3.5 h-3.5 text-pink-400 shrink-0 mt-0.5" />
               <span>Khu Đô thị Đại học, TP. Hồ Chí Minh & Hà Nội</span>
             </div>
           </div>

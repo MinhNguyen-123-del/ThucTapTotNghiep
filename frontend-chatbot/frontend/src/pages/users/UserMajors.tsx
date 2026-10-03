@@ -32,7 +32,7 @@ export default function UserMajors() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-semibold mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 text-fuchsia-700 border border-pink-200 text-xs font-semibold mb-2">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Chương Trình Đào Tạo 2026</span>
           </div>
@@ -46,7 +46,7 @@ export default function UserMajors() {
 
         <Link
           to="/user/chat"
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-xs transition"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-fuchsia-600 via-pink-500 to-violet-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-xs transition"
         >
           <Bot className="w-4 h-4" />
           <span>Hỏi AI Tư Vấn Chọn Ngành</span>
@@ -62,7 +62,7 @@ export default function UserMajors() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Tìm theo tên ngành, mã ngành hoặc khoa..."
-            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-blue-500 focus:bg-white transition"
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-fuchsia-500 focus:bg-white transition"
           />
         </div>
         <span className="text-xs text-gray-500 font-medium hidden sm:inline-block">
@@ -79,7 +79,7 @@ export default function UserMajors() {
           >
             <div>
               <div className="flex items-start justify-between gap-3 mb-2">
-                <span className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 font-semibold">
+                <span className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-pink-50 text-fuchsia-700 font-semibold">
                   Mã: {c.code}
                 </span>
                 <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">
@@ -108,7 +108,7 @@ export default function UserMajors() {
                   <span className="flex items-center gap-1.5 text-gray-500">
                     <Award className="w-3.5 h-3.5" /> Mức học phí:
                   </span>
-                  <strong className="text-blue-600 font-semibold">{formatCurrencyVND(c.tuitionPerTerm)}/kỳ</strong>
+                  <strong className="text-fuchsia-600 font-semibold">{formatCurrencyVND(c.tuitionPerTerm)}/kỳ</strong>
                 </div>
 
                 <div className="flex items-center justify-between text-gray-600">
@@ -130,7 +130,7 @@ export default function UserMajors() {
               <span className="text-[11px] text-gray-400">Đào tạo: {c.durationYears} năm</span>
               <Link
                 to="/user/apply"
-                className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-xl transition"
+                className="inline-flex items-center gap-1 text-xs font-bold text-fuchsia-600 hover:text-fuchsia-700 bg-pink-50 hover:bg-pink-100 px-3 py-1.5 rounded-xl transition"
               >
                 <span>Đăng Ký Ngành Này</span>
                 <ArrowRight className="w-3.5 h-3.5" />

@@ -99,7 +99,7 @@ function TeachersList() {
         <button
           type="button"
           onClick={handleOpenAddModal}
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
+          className="inline-flex items-center gap-2 bg-fuchsia-600 hover:bg-fuchsia-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Thêm Cán Bộ Tư Vấn</span>
@@ -115,7 +115,7 @@ function TeachersList() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Tìm theo tên cán bộ, email, số điện thoại..."
-            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-blue-500 focus:bg-white transition"
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-fuchsia-500 focus:bg-white transition"
           />
         </div>
         <span className="text-xs text-gray-500 font-medium hidden sm:inline-block">
@@ -133,7 +133,7 @@ function TeachersList() {
             <div>
               <div className="flex items-start justify-between gap-3 mb-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center font-bold text-sm shadow-xs">
+                  <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-fuchsia-500 via-amber-400 to-teal-500 text-white flex items-center justify-center font-bold text-sm shadow-xs">
                     {t.fullName.charAt(0)}
                   </div>
                   <div>
@@ -166,14 +166,14 @@ function TeachersList() {
 
               <div className="mt-3">
                 <div className="flex items-center gap-1.5 text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                  <Award className="w-3 h-3 text-blue-600" />
+                  <Award className="w-3 h-3 text-fuchsia-600" />
                   <span>Ngành phụ trách tư vấn</span>
                 </div>
                 <div className="flex flex-wrap gap-1">
                   {(t.assignedMajors || ['Tư vấn chung']).map((m: string, idx: number) => (
                     <span
                       key={idx}
-                      className="bg-blue-50 text-blue-700 border border-blue-100 px-2 py-0.5 rounded-md text-[11px] font-medium"
+                      className="bg-pink-50 text-fuchsia-700 border border-pink-100 px-2 py-0.5 rounded-md text-[11px] font-medium"
                     >
                       {m}
                     </span>
@@ -186,7 +186,7 @@ function TeachersList() {
               <button
                 type="button"
                 onClick={() => handleOpenEditModal(t)}
-                className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition cursor-pointer"
+                className="p-1.5 text-fuchsia-600 hover:bg-pink-50 rounded-lg transition cursor-pointer"
                 title="Sửa"
               >
                 <Edit2 className="w-4 h-4" />
@@ -217,7 +217,7 @@ function TeachersList() {
               <select
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="ThS.">ThS.</option>
                 <option value="TS.">TS.</option>
@@ -234,7 +234,7 @@ function TeachersList() {
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 placeholder="Nguyễn Thị B"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -248,7 +248,7 @@ function TeachersList() {
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="0901234567"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -258,7 +258,7 @@ function TeachersList() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="tuyensinh@admission.edu.vn"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -269,7 +269,7 @@ function TeachersList() {
               type="text"
               value={formData.department}
               onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
             />
           </div>
 
@@ -287,7 +287,7 @@ function TeachersList() {
                 })
               }
               placeholder="Công nghệ Thông tin, AI..."
-              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
             />
           </div>
 
@@ -301,7 +301,7 @@ function TeachersList() {
             </button>
             <button
               type="submit"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
+              className="px-5 py-2.5 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
             >
               {editingTeacher ? 'Cập nhật' : 'Thêm Cán Bộ'}
             </button>

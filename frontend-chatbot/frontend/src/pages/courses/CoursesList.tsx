@@ -106,7 +106,7 @@ function CoursesList() {
         <button
           type="button"
           onClick={handleOpenAddModal}
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
+          className="inline-flex items-center gap-2 bg-fuchsia-600 hover:bg-fuchsia-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Thêm Ngành Mới</span>
@@ -122,7 +122,7 @@ function CoursesList() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Tìm theo tên ngành, mã ngành hoặc khoa..."
-            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-blue-500 focus:bg-white transition"
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-fuchsia-500 focus:bg-white transition"
           />
         </div>
         <span className="text-xs text-gray-500 font-medium hidden sm:inline-block">
@@ -139,7 +139,7 @@ function CoursesList() {
           >
             <div>
               <div className="flex items-start justify-between gap-3 mb-2">
-                <span className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 font-semibold">
+                <span className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-pink-50 text-fuchsia-700 font-semibold">
                   Mã: {c.code}
                 </span>
                 <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
@@ -168,7 +168,7 @@ function CoursesList() {
                   <span className="flex items-center gap-1.5 text-gray-500">
                     <Award className="w-3.5 h-3.5" /> Học phí dự kiến:
                   </span>
-                  <strong className="text-blue-600 font-semibold">{formatCurrencyVND(c.tuitionPerTerm)}/kỳ</strong>
+                  <strong className="text-fuchsia-600 font-semibold">{formatCurrencyVND(c.tuitionPerTerm)}/kỳ</strong>
                 </div>
 
                 <div className="flex items-center justify-between text-gray-600">
@@ -192,7 +192,7 @@ function CoursesList() {
                 <button
                   type="button"
                   onClick={() => handleOpenEditModal(c)}
-                  className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition cursor-pointer"
+                  className="p-1.5 text-fuchsia-600 hover:bg-pink-50 rounded-lg transition cursor-pointer"
                   title="Sửa ngành"
                 >
                   <Edit2 className="w-4 h-4" />
@@ -228,7 +228,7 @@ function CoursesList() {
                 value={formData.code}
                 onChange={(e) => setFormData({ ...formData, code: e.target.value })}
                 placeholder="7480201"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500 font-mono"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500 font-mono"
               />
             </div>
             <div>
@@ -239,7 +239,7 @@ function CoursesList() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="Công nghệ Thông tin"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -251,7 +251,7 @@ function CoursesList() {
                 type="text"
                 value={formData.faculty}
                 onChange={(e) => setFormData({ ...formData, faculty: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -260,7 +260,7 @@ function CoursesList() {
                 type="number"
                 value={formData.quota}
                 onChange={(e) => setFormData({ ...formData, quota: parseInt(e.target.value) || 0 })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -270,7 +270,7 @@ function CoursesList() {
                 step="0.05"
                 value={formData.previousCutoffScore}
                 onChange={(e) => setFormData({ ...formData, previousCutoffScore: parseFloat(e.target.value) || 0 })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -283,7 +283,7 @@ function CoursesList() {
                 step="500000"
                 value={formData.tuitionPerTerm}
                 onChange={(e) => setFormData({ ...formData, tuitionPerTerm: parseInt(e.target.value) || 0 })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -298,7 +298,7 @@ function CoursesList() {
                   })
                 }
                 placeholder="A00, A01, D01"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500 font-mono"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500 font-mono"
               />
             </div>
           </div>
@@ -310,7 +310,7 @@ function CoursesList() {
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               placeholder="Giới thiệu định hướng đào tạo, công nghệ, chứng chỉ quốc tế..."
-              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
             />
           </div>
 
@@ -324,7 +324,7 @@ function CoursesList() {
             </button>
             <button
               type="submit"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
+              className="px-5 py-2.5 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
             >
               {editingCourse ? 'Cập nhật' : 'Lưu Ngành Mới'}
             </button>

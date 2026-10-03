@@ -136,4 +136,5 @@ export interface User {
   appliedMajor?: string;
   createdAt?: string;
   status?: 'active' | 'inactive';
+   isVerified: boolean;
 }

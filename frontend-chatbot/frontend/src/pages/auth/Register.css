@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 440px;
     margin: 0 auto;
-    color: #fff;
+    color: #34243f;
 }
 
 .register-header {
@@ -11,14 +11,14 @@
 
 .register-label {
     margin: 0 0 10px;
-    color: #7f8cff;
+    color: #c02fb2;
     font-size: 13px;
     font-weight: 600;
 }
 
 .register-title {
     margin: 0;
-    color: #fff;
+    color: #34243f;
     font-size: 32px;
     line-height: 1.2;
     font-weight: 800;
@@ -26,7 +26,7 @@
 
 .register-description {
     margin-top: 10px;
-    color: #858a98;
+    color: #76647e;
     font-size: 14px;
     line-height: 1.6;
 }
@@ -37,7 +37,7 @@
     border-radius: 10px;
     background: rgba(220, 70, 70, .1);
     border: 1px solid rgba(220, 70, 70, .2);
-    color: #ff7777;
+    color: #df5d79;
     font-size: 13px;
 }
 
@@ -48,7 +48,7 @@
     .register-group label {
         display: block;
         margin-bottom: 9px;
-        color: #e5e7eb;
+        color: #594a65;
         font-size: 14px;
         font-weight: 600;
     }
@@ -59,24 +59,24 @@
         height: 48px;
         box-sizing: border-box;
         padding: 0 15px;
-        border: 1px solid #37383d;
+        border: 1px solid #dacde4;
         border-radius: 11px;
         outline: none;
-        background: #111214;
-        color: #fff;
+        background: #ffffff;
+        color: #34243f;
         font-size: 14px;
         transition: .2s;
     }
 
         .register-group > input::placeholder,
         .register-password input::placeholder {
-            color: #687080;
+            color: #9585a0;
         }
 
         .register-group > input:focus,
         .register-password input:focus {
-            border-color: #5364ff;
-            box-shadow: 0 0 0 3px rgba(83,100,255,.12);
+            border-color: #d23db8;
+            box-shadow: 0 0 0 3px rgba(210,61,184,.14);
         }
 
 .register-password {
@@ -94,18 +94,18 @@
         transform: translateY(-50%);
         border: 0;
         background: transparent;
-        color: #747b89;
+        color: #8f7c98;
         font-size: 13px;
         cursor: pointer;
     }
 
         .register-password button:hover {
-            color: #fff;
+            color: #34243f;
         }
 
 .register-hint {
     margin-top: 7px;
-    color: #666d7b;
+    color: #91809b;
     font-size: 12px;
 }
 
@@ -115,17 +115,17 @@
     margin-top: 3px;
     border: 0;
     border-radius: 11px;
-    background: #5060ff;
-    color: #fff;
+    background: #8b2be2;
+    color: #34243f;
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(80,96,255,.20);
+    box-shadow: 0 10px 25px rgba(139,43,226,.18);
     transition: .2s;
 }
 
     .register-button:hover {
-        background: #5a69ff;
+        background: #a12dd5;
         transform: translateY(-1px);
     }
 
@@ -138,16 +138,16 @@
 .register-footer {
     margin-top: 32px;
     text-align: center;
-    color: #777d89;
+    color: #85728f;
     font-size: 14px;
 }
 
     .register-footer a {
-        color: #8190ff;
+        color: #b02aa5;
         font-weight: 600;
         text-decoration: none;
     }
 
         .register-footer a:hover {
-            color: #a4adff;
+            color: #e05bc9;
         }

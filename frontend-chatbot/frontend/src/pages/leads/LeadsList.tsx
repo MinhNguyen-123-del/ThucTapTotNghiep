@@ -145,7 +145,7 @@ function LeadsList() {
         <button
           type="button"
           onClick={handleOpenAddModal}
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
+          className="inline-flex items-center gap-2 bg-fuchsia-600 hover:bg-fuchsia-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Thêm Thí Sinh Mới</span>
@@ -161,7 +161,7 @@ function LeadsList() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Tìm theo tên, SĐT, ngành quan tâm..."
-            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-blue-500 focus:bg-white transition"
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-fuchsia-500 focus:bg-white transition"
           />
         </div>
 
@@ -171,7 +171,7 @@ function LeadsList() {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="bg-gray-50 border border-gray-200 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-blue-500"
+            className="bg-gray-50 border border-gray-200 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-fuchsia-500"
           >
             <option value="all">Tất cả ({leads.length})</option>
             <option value="new">Mới đăng ký</option>
@@ -206,7 +206,7 @@ function LeadsList() {
                     <tr key={lead.id} className="hover:bg-gray-50/80 transition">
                       <td className="px-6 py-4 font-semibold text-gray-900">
                         <div className="flex items-center gap-2.5">
-                          <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs">
+                          <div className="w-8 h-8 rounded-full bg-pink-100 text-fuchsia-700 flex items-center justify-center font-bold text-xs">
                             {lead.fullName.charAt(0)}
                           </div>
                           <div>
@@ -234,7 +234,7 @@ function LeadsList() {
                       <td className="px-6 py-4 font-medium text-gray-800">
                         <p className="leading-tight">{lead.desiredMajor}</p>
                         <p className="text-[11px] text-gray-400 mt-0.5">
-                          Điểm dự kiến: <strong className="text-blue-600">{lead.expectedScore}</strong>
+                          Điểm dự kiến: <strong className="text-fuchsia-600">{lead.expectedScore}</strong>
                         </p>
                       </td>
                       <td className="px-6 py-4 text-gray-600">
@@ -267,7 +267,7 @@ function LeadsList() {
                             type="button"
                             onClick={() => handleOpenEditModal(lead)}
                             title="Sửa thông tin"
-                            className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition cursor-pointer"
+                            className="p-1.5 text-fuchsia-600 hover:bg-pink-50 rounded-lg transition cursor-pointer"
                           >
                             <Edit2 className="w-4 h-4" />
                           </button>
@@ -313,7 +313,7 @@ function LeadsList() {
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 placeholder="Nguyễn Văn A"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -324,7 +324,7 @@ function LeadsList() {
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="0912345678"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -337,7 +337,7 @@ function LeadsList() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="student@gmail.com"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -347,7 +347,7 @@ function LeadsList() {
                 step="0.1"
                 value={formData.expectedScore}
                 onChange={(e) => setFormData({ ...formData, expectedScore: parseFloat(e.target.value) })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -358,7 +358,7 @@ function LeadsList() {
               <select
                 value={formData.desiredMajor}
                 onChange={(e) => setFormData({ ...formData, desiredMajor: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="Công nghệ Thông tin">Công nghệ Thông tin</option>
                 <option value="Trí tuệ Nhân tạo (AI & Data Science)">Trí tuệ Nhân tạo (AI & Data Science)</option>
@@ -373,7 +373,7 @@ function LeadsList() {
               <select
                 value={formData.status}
                 onChange={(e) => setFormData({ ...formData, status: e.target.value as any })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="new">Mới đăng ký</option>
                 <option value="contacted">Đã liên hệ</option>
@@ -392,7 +392,7 @@ function LeadsList() {
                 value={formData.highSchool}
                 onChange={(e) => setFormData({ ...formData, highSchool: e.target.value })}
                 placeholder="THPT Chuyên..."
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -402,7 +402,7 @@ function LeadsList() {
                 value={formData.province}
                 onChange={(e) => setFormData({ ...formData, province: e.target.value })}
                 placeholder="TP. Hồ Chí Minh"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -414,7 +414,7 @@ function LeadsList() {
               value={formData.notes}
               onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
               placeholder="Ghi chú chi tiết về nhu cầu học bổng, câu hỏi của thí sinh..."
-              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
             />
           </div>
 
@@ -428,7 +428,7 @@ function LeadsList() {
             </button>
             <button
               type="submit"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
+              className="px-5 py-2.5 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
             >
               {editingLead ? 'Cập nhật' : 'Thêm mới'}
             </button>

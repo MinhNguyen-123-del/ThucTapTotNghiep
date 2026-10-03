@@ -71,22 +71,22 @@ export default function UserDashboard() {
   return (
     <div className="space-y-6">
       {/* Welcome Banner */}
-      <div className="bg-gradient-to-r from-blue-700 via-indigo-700 to-slate-900 rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden shadow-lg">
-        <div className="absolute right-0 top-0 translate-x-12 -translate-y-12 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="bg-gradient-to-r from-fuchsia-700 via-pink-500 to-teal-600 rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden shadow-lg">
+        <div className="absolute right-0 top-0 translate-x-12 -translate-y-12 w-80 h-80 bg-pink-400/20 rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 border border-white/20 text-xs font-semibold backdrop-blur-xs">
-              <Sparkles className="w-3.5 h-3.5 text-blue-200" />
+              <Sparkles className="w-3.5 h-3.5 text-pink-200" />
               <span>Hệ thống Tuyển sinh Đại học Chính quy năm {UNIVERSITY_INFO.admissionYear}</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
               Xin chào, {student?.fullName || user?.fullName || 'Thí sinh'}!
             </h1>
-            <p className="text-blue-100 text-xs sm:text-sm max-w-2xl leading-relaxed">
+            <p className="text-pink-100 text-xs sm:text-sm max-w-2xl leading-relaxed">
               Chào mừng bạn đến với Cổng thông tin Thí sinh. Bạn có thể theo dõi tiến độ xét duyệt hồ sơ, xem kết quả trúng tuyển và thanh toán lệ phí trực tuyến tại đây.
             </p>
-            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-blue-200 font-mono">
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-pink-200 font-mono">
               <span>Mã thí sinh: <strong className="text-white">{student?.candidateCode || 'TS2026-88991'}</strong></span>
               <span>•</span>
               <span>CCCD: <strong className="text-white">{student?.cccd || '079208009988'}</strong></span>
@@ -96,9 +96,9 @@ export default function UserDashboard() {
           <div className="flex flex-wrap gap-3">
             <Link
               to="/user/apply"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-blue-700 font-semibold text-xs sm:text-sm hover:bg-blue-50 transition shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-fuchsia-700 font-semibold text-xs sm:text-sm hover:bg-pink-50 transition shadow-sm"
             >
-              <GraduationCap className="w-4.5 h-4.5 text-blue-600" />
+              <GraduationCap className="w-4.5 h-4.5 text-fuchsia-600" />
               <span>Nộp Thêm Nguyện Vọng</span>
             </Link>
             <Link
@@ -126,7 +126,7 @@ export default function UserDashboard() {
                 step.completed
                   ? 'bg-emerald-50/70 border-emerald-200'
                   : step.active
-                  ? 'bg-blue-50/70 border-blue-200 ring-2 ring-blue-500/20'
+                  ? 'bg-pink-50/70 border-pink-200 ring-2 ring-fuchsia-500/20'
                   : 'bg-gray-50 border-gray-100 opacity-60'
               }`}
             >
@@ -137,7 +137,7 @@ export default function UserDashboard() {
                 {step.completed ? (
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 ) : step.active ? (
-                  <Clock className="w-4 h-4 text-blue-600 animate-pulse" />
+                  <Clock className="w-4 h-4 text-fuchsia-600 animate-pulse" />
                 ) : (
                   <div className="w-4 h-4 rounded-full border border-gray-300" />
                 )}
@@ -177,7 +177,7 @@ export default function UserDashboard() {
 
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-gray-100 gap-2">
               <div>
-                <span className="text-[11px] font-mono text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded-md">
+                <span className="text-[11px] font-mono text-fuchsia-600 font-semibold bg-pink-50 px-2 py-0.5 rounded-md">
                   Mã Ngành: {student?.majorCode || '7480201'}
                 </span>
                 <h3 className="text-lg font-bold text-gray-900 mt-1">
@@ -204,7 +204,7 @@ export default function UserDashboard() {
               </div>
               <div>
                 <span className="text-gray-400 block mb-1">Điểm xét tuyển</span>
-                <strong className="text-blue-600 font-bold text-base">
+                <strong className="text-fuchsia-600 font-bold text-base">
                   {student?.totalScore || 26.8} / 30.0
                 </strong>
               </div>
@@ -240,7 +240,7 @@ export default function UserDashboard() {
                 </button>
                 <Link
                   to="/user/payments"
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-semibold shadow-xs transition cursor-pointer flex items-center gap-1.5"
+                  className="px-4 py-2 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl text-xs font-semibold shadow-xs transition cursor-pointer flex items-center gap-1.5"
                 >
                   <CreditCard className="w-3.5 h-3.5" />
                   <span>Xác Nhận Nhập Học</span>
@@ -258,7 +258,7 @@ export default function UserDashboard() {
               </div>
               <Link
                 to="/user/payments"
-                className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1"
+                className="text-xs font-semibold text-fuchsia-600 hover:text-fuchsia-700 flex items-center gap-1"
               >
                 <span>Chi tiết</span>
                 <ChevronRight className="w-3.5 h-3.5" />
@@ -300,19 +300,19 @@ export default function UserDashboard() {
           {/* Dedicated Counselor Card */}
           <div className="bg-white rounded-2xl border border-gray-200/80 p-6 shadow-xs">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 mb-4">
-              <Phone className="w-4 h-4 text-blue-600" />
+              <Phone className="w-4 h-4 text-fuchsia-600" />
               <span>Cán Bộ Hỗ Trợ Riêng</span>
             </div>
 
             <div className="flex items-center gap-3.5 mb-4">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-bold text-base flex items-center justify-center shadow-sm">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-fuchsia-600 via-pink-500 to-teal-500 text-white font-bold text-base flex items-center justify-center shadow-sm">
                 H
               </div>
               <div>
                 <h4 className="font-bold text-sm text-gray-900 leading-tight">
                   PGS.TS. Trần Đình Hoàng
                 </h4>
-                <p className="text-xs text-blue-600 font-medium">Ban Tư Vấn Tuyển Sinh Khối CNTT</p>
+                <p className="text-xs text-fuchsia-600 font-medium">Ban Tư Vấn Tuyển Sinh Khối CNTT</p>
                 <p className="text-[11px] text-gray-400">Khoa Công nghệ Thông tin</p>
               </div>
             </div>
@@ -328,7 +328,7 @@ export default function UserDashboard() {
                 <span className="flex items-center gap-1.5 text-gray-500">
                   <Mail className="w-3.5 h-3.5" /> Email giải đáp:
                 </span>
-                <span className="text-blue-600 font-medium truncate max-w-[160px]">
+                <span className="text-fuchsia-600 font-medium truncate max-w-[160px]">
                   hoang.td@admission.edu.vn
                 </span>
               </div>
@@ -336,7 +336,7 @@ export default function UserDashboard() {
 
             <Link
               to="/user/chat"
-              className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-semibold transition border border-blue-200/60"
+              className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-pink-50 text-fuchsia-700 hover:bg-pink-100 text-xs font-semibold transition border border-pink-200/60"
             >
               <Bot className="w-4 h-4" />
               <span>Nhắn tin hỏi Trợ lý AI ngay</span>
@@ -346,7 +346,7 @@ export default function UserDashboard() {
           {/* Admission Schedule */}
           <div className="bg-white rounded-2xl border border-gray-200/80 p-6 shadow-xs">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">
-              <Calendar className="w-4 h-4 text-indigo-600" />
+              <Calendar className="w-4 h-4 text-violet-600" />
               <span>Lịch Tuyển Sinh Quan Trọng</span>
             </div>
 
@@ -359,7 +359,7 @@ export default function UserDashboard() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-blue-500 mt-1.5 shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-fuchsia-500 mt-1.5 shrink-0" />
                 <div>
                   <p className="font-semibold text-gray-900">Công bố điểm chuẩn trúng tuyển sớm</p>
                   <p className="text-gray-500 text-[11px]">Ngày 15/06/2026 trên Cổng thí sinh</p>
@@ -381,7 +381,7 @@ export default function UserDashboard() {
               <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
                 Các Ngành Đào Tạo Khác
               </span>
-              <Link to="/user/majors" className="text-xs text-blue-600 font-semibold hover:underline">
+              <Link to="/user/majors" className="text-xs text-fuchsia-600 font-semibold hover:underline">
                 Xem tất cả
               </Link>
             </div>
@@ -393,14 +393,14 @@ export default function UserDashboard() {
                   className="flex items-center justify-between p-2.5 rounded-xl border border-gray-100 hover:bg-gray-50 transition group"
                 >
                   <div>
-                    <p className="text-xs font-semibold text-gray-800 group-hover:text-blue-600">
+                    <p className="text-xs font-semibold text-gray-800 group-hover:text-fuchsia-600">
                       {c.name}
                     </p>
                     <span className="text-[10px] text-gray-400">
                       Điểm chuẩn: {c.previousCutoffScore} • {formatCurrencyVND(c.tuitionPerTerm)}/kỳ
                     </span>
                   </div>
-                  <ArrowRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-fuchsia-600 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               ))}
             </div>
@@ -418,11 +418,11 @@ export default function UserDashboard() {
         <div className="space-y-6 text-xs text-gray-800 p-2">
           <div className="text-center border-b border-gray-200 pb-5">
             <p className="text-xs uppercase font-bold text-gray-500">BỘ GIÁO DỤC VÀ ĐÀO TẠO</p>
-            <h2 className="text-base font-extrabold text-blue-900 mt-1 uppercase">
+            <h2 className="text-base font-extrabold text-fuchsia-900 mt-1 uppercase">
               {UNIVERSITY_INFO.name}
             </h2>
             <p className="text-[11px] text-gray-500">HỘI ĐỒNG TUYỂN SINH ĐẠI HỌC CHÍNH QUY NĂM 2026</p>
-            <div className="w-24 h-0.5 bg-blue-600 mx-auto my-2"></div>
+            <div className="w-24 h-0.5 bg-fuchsia-600 mx-auto my-2"></div>
             <h3 className="text-base font-bold text-red-600 mt-3">
               GIẤY BÁO ĐỦ ĐIỀU KIỆN TRÚNG TUYỂN SỚM
             </h3>
@@ -460,7 +460,7 @@ export default function UserDashboard() {
                 alert('Đang tải giấy báo trúng tuyển bản PDF có chữ ký số và dấu đỏ...');
                 setShowCertificateModal(false);
               }}
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold flex items-center gap-2 cursor-pointer shadow-xs"
+              className="px-4 py-2 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl font-bold flex items-center gap-2 cursor-pointer shadow-xs"
             >
               <Download className="w-4 h-4" />
               <span>Tải Bản PDF Có Dấu Đỏ</span>

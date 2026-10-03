@@ -57,7 +57,7 @@ export function ChatWidget() {
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-4 py-3 rounded-full shadow-2xl transition-transform hover:scale-105 cursor-pointer"
+          className="flex items-center gap-2.5 bg-gradient-to-r from-fuchsia-600 via-pink-500 to-violet-600 hover:from-fuchsia-700 hover:to-violet-700 text-white px-4 py-3 rounded-full shadow-2xl transition-transform hover:scale-105 cursor-pointer"
         >
           <Bot className="w-5 h-5 animate-pulse" />
           <span className="text-xs font-bold tracking-wide">Hỏi Chatbot AI</span>
@@ -69,15 +69,15 @@ export function ChatWidget() {
       {isOpen && (
         <div className="w-[360px] sm:w-[390px] h-[520px] bg-white rounded-3xl shadow-2xl border border-gray-200/80 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5">
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-4 text-white flex items-center justify-between">
+          <div className="bg-gradient-to-r from-fuchsia-600 to-violet-700 p-4 text-white flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center">
                 <Bot className="w-5 h-5" />
               </div>
               <div>
                 <h4 className="font-bold text-sm leading-tight">Trợ Lý AI Tuyển Sinh</h4>
-                <p className="text-[10px] text-blue-100 flex items-center gap-1">
-                  <Sparkles className="w-2.5 h-2.5 text-blue-200" /> Trực tuyến 24/7
+                <p className="text-[10px] text-pink-100 flex items-center gap-1">
+                  <Sparkles className="w-2.5 h-2.5 text-pink-200" /> Trực tuyến 24/7
                 </p>
               </div>
             </div>
@@ -98,7 +98,7 @@ export function ChatWidget() {
                 className={`flex gap-2 ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {m.sender === 'bot' && (
-                  <div className="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-lg bg-fuchsia-600 text-white flex items-center justify-center shrink-0 mt-0.5">
                     <Bot className="w-4 h-4" />
                   </div>
                 )}
@@ -106,7 +106,7 @@ export function ChatWidget() {
                   <div
                     className={`p-3 rounded-2xl leading-relaxed ${
                       m.sender === 'user'
-                        ? 'bg-blue-600 text-white rounded-tr-xs'
+                        ? 'bg-fuchsia-600 text-white rounded-tr-xs'
                         : 'bg-white text-gray-800 border border-gray-200/80 shadow-2xs rounded-tl-xs whitespace-pre-line'
                     }`}
                   >
@@ -120,7 +120,7 @@ export function ChatWidget() {
                           key={idx}
                           type="button"
                           onClick={() => handleSend(q)}
-                          className="text-[11px] bg-white hover:bg-blue-50 text-blue-600 border border-blue-200 px-2.5 py-1 rounded-full cursor-pointer transition font-medium"
+                          className="text-[11px] bg-white hover:bg-pink-50 text-fuchsia-600 border border-pink-200 px-2.5 py-1 rounded-full cursor-pointer transition font-medium"
                         >
                           {q}
                         </button>
@@ -133,7 +133,7 @@ export function ChatWidget() {
 
             {loading && (
               <div className="flex items-center gap-2 text-gray-400 text-xs italic">
-                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-fuchsia-500 animate-pulse"></span>
                 <span>AI đang suy nghĩ...</span>
               </div>
             )}
@@ -153,12 +153,12 @@ export function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Nhập câu hỏi của bạn..."
-                className="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-xs focus:bg-white focus:outline-none focus:border-blue-500"
+                className="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-xs focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
               <button
                 type="submit"
                 disabled={!input.trim() || loading}
-                className="p-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white rounded-xl cursor-pointer transition"
+                className="p-2 bg-fuchsia-600 hover:bg-fuchsia-700 disabled:opacity-50 text-white rounded-xl cursor-pointer transition"
               >
                 <Send className="w-4 h-4" />
               </button>

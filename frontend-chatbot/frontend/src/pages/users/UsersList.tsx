@@ -108,7 +108,7 @@ function UsersList() {
         <button
           type="button"
           onClick={handleOpenAdd}
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
+          className="inline-flex items-center gap-2 bg-fuchsia-600 hover:bg-fuchsia-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Tạo Tài Khoản Mới</span>
@@ -129,13 +129,13 @@ function UsersList() {
           </div>
         </div>
 
-        <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-200/80 flex items-start gap-3.5">
-          <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+        <div className="p-4 rounded-2xl bg-pink-50/70 border border-pink-200/80 flex items-start gap-3.5">
+          <div className="w-10 h-10 rounded-xl bg-fuchsia-600 text-white flex items-center justify-center shrink-0 shadow-xs">
             <UserIcon className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="font-bold text-sm text-blue-950">Quyền Thí Sinh / Người Dùng (User)</h4>
-            <p className="text-xs text-blue-800/80 mt-0.5 leading-relaxed">
+            <h4 className="font-bold text-sm text-fuchsia-950">Quyền Thí Sinh / Người Dùng (User)</h4>
+            <p className="text-xs text-fuchsia-800/80 mt-0.5 leading-relaxed">
               Tự động điều hướng vào trang <code>/user</code>: Nộp hồ sơ học bạ, tra cứu điểm chuẩn ngành, thanh toán lệ phí trực tuyến và chat với trợ lý AI.
             </p>
           </div>
@@ -151,7 +151,7 @@ function UsersList() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Tìm tài khoản theo họ tên, email..."
-            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-blue-500 focus:bg-white transition"
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2 text-xs focus:outline-none focus:border-fuchsia-500 focus:bg-white transition"
           />
         </div>
         <span className="text-xs text-gray-500 font-medium hidden sm:inline-block">
@@ -199,7 +199,7 @@ function UsersList() {
                           ? 'bg-red-50 text-red-700 border-red-200'
                           : u.role === 'manager'
                           ? 'bg-amber-50 text-amber-700 border-amber-200'
-                          : 'bg-blue-50 text-blue-700 border-blue-200'
+                          : 'bg-pink-50 text-fuchsia-700 border-pink-200'
                       }`}
                     >
                       <option value="admin">Quản trị viên (admin)</option>
@@ -248,7 +248,7 @@ function UsersList() {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="Nguyễn Văn A"
-              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
             />
           </div>
 
@@ -260,7 +260,7 @@ function UsersList() {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="user@admission.edu.vn"
-              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
             />
           </div>
 
@@ -269,7 +269,7 @@ function UsersList() {
             <select
               value={formData.role}
               onChange={(e) => setFormData({ ...formData, role: e.target.value as UserRole })}
-              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500 font-medium"
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500 font-medium"
             >
               <option value="user">Thí sinh / Người dùng (User) - Chỉ vào Cổng Thí Sinh</option>
               <option value="admin">Quản trị viên (Admin) - Toàn quyền Quản Trị Tuyển Sinh</option>
@@ -293,7 +293,7 @@ function UsersList() {
             </button>
             <button
               type="submit"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
+              className="px-5 py-2.5 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
             >
               Tạo Tài Khoản
             </button>

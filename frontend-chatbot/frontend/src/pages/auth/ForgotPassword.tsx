@@ -53,9 +53,9 @@ function ForgotPassword() {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-white">
-                  Admission Chatbot
+                  TFT Academy
                 </h1>
-                <p className="text-sm text-blue-100">AI hỗ trợ tuyển sinh</p>
+                <p className="text-sm text-blue-100">Đào tạo nhân tài</p>
               </div>
             </div>
 
@@ -74,7 +74,7 @@ function ForgotPassword() {
             </div>
 
             <div className="flex justify-center">
-              <p className="text-sm text-blue-200">© 2026 Admission Chatbot</p>
+              <p className="text-sm text-blue-200">© 2026 TFT Academy</p>
             </div>
           </div>
         </div>

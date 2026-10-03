@@ -39,18 +39,18 @@ function Dashboard() {
   return (
     <div className="space-y-6">
       {/* Banner Top */}
-      <div className="bg-gradient-to-r from-blue-700 via-indigo-700 to-slate-900 rounded-3xl p-6 lg:p-8 text-white relative overflow-hidden shadow-lg">
-        <div className="absolute right-0 top-0 translate-x-10 -translate-y-10 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="bg-gradient-to-r from-fuchsia-700 via-violet-700 to-slate-900 rounded-3xl p-6 lg:p-8 text-white relative overflow-hidden shadow-lg">
+        <div className="absolute right-0 top-0 translate-x-10 -translate-y-10 w-96 h-96 bg-pink-400/20 rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 border border-white/20 text-xs font-semibold backdrop-blur-xs">
-              <Sparkles className="w-3.5 h-3.5 text-blue-200" />
+              <Sparkles className="w-3.5 h-3.5 text-pink-200" />
               <span>Hệ thống Tuyển sinh Đại học & Chatbot AI 2026 - Phân quyền Quản Trị</span>
             </div>
             <h1 className="text-2xl lg:text-3xl font-bold tracking-tight">
               Bảng Điều Khiển Quản Trị Tuyển Sinh (Admin)
             </h1>
-            <p className="text-blue-100 text-sm leading-relaxed">
+            <p className="text-pink-100 text-sm leading-relaxed">
               Giám sát tình hình tuyển sinh theo thời gian thực, quản lý thí sinh quan tâm, kết quả xét tuyển và hiệu quả tư vấn tự động qua Chatbox AI.
             </p>
           </div>
@@ -65,9 +65,9 @@ function Dashboard() {
             </Link>
             <Link
               to="/chatbot"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-blue-700 font-semibold text-sm hover:bg-blue-50 transition shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-fuchsia-700 font-semibold text-sm hover:bg-pink-50 transition shadow-sm"
             >
-              <Bot className="w-4.5 h-4.5 text-blue-600" />
+              <Bot className="w-4.5 h-4.5 text-fuchsia-600" />
               <span>Mở Chatbox AI</span>
             </Link>
             <Link
@@ -133,7 +133,7 @@ function Dashboard() {
               </div>
               <Link
                 to="/leads"
-                className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1"
+                className="text-xs font-semibold text-fuchsia-600 hover:text-fuchsia-700 flex items-center gap-1"
               >
                 <span>Xem tất cả</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -146,7 +146,7 @@ function Dashboard() {
                 return (
                   <div key={lead.id} className="py-3.5 flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">
+                      <div className="w-10 h-10 rounded-xl bg-pink-50 text-fuchsia-600 flex items-center justify-center font-bold text-sm">
                         {lead.fullName.charAt(0)}
                       </div>
                       <div>
@@ -189,7 +189,7 @@ function Dashboard() {
               </div>
               <Link
                 to="/courses"
-                className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1"
+                className="text-xs font-semibold text-fuchsia-600 hover:text-fuchsia-700 flex items-center gap-1"
               >
                 <span>Chi tiết ngành</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -198,10 +198,10 @@ function Dashboard() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
               {courses.slice(0, 4).map((c) => (
-                <div key={c.id} className="p-3.5 rounded-xl border border-gray-100 bg-gray-50/50 hover:bg-blue-50/40 transition">
+                <div key={c.id} className="p-3.5 rounded-xl border border-gray-100 bg-gray-50/50 hover:bg-pink-50/40 transition">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-[11px] font-mono text-gray-400">Mã: {c.code}</span>
-                    <span className="text-xs font-bold text-blue-600">ĐC: {c.previousCutoffScore}</span>
+                    <span className="text-xs font-bold text-fuchsia-600">ĐC: {c.previousCutoffScore}</span>
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 leading-snug">{c.name}</h4>
                   <div className="mt-2 flex items-center justify-between text-xs text-gray-500">
@@ -217,10 +217,10 @@ function Dashboard() {
         {/* Right 1 Col: AI Chatbot Spotlight & Quick Actions */}
         <div className="space-y-6">
           {/* AI Chatbot Status Box */}
-          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl p-6 shadow-md relative overflow-hidden">
+          <div className="bg-gradient-to-br from-fuchsia-600 to-violet-700 text-white rounded-2xl p-6 shadow-md relative overflow-hidden">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <Bot className="w-6 h-6 text-blue-200" />
+                <Bot className="w-6 h-6 text-pink-200" />
                 <h3 className="font-bold text-base">Trợ Lý AI Tuyển Sinh</h3>
               </div>
               <span className="flex items-center gap-1 text-[11px] bg-emerald-500/20 text-emerald-200 border border-emerald-400/30 px-2 py-0.5 rounded-full">
@@ -229,24 +229,24 @@ function Dashboard() {
               </span>
             </div>
 
-            <p className="text-xs text-blue-100 leading-relaxed mb-4">
+            <p className="text-xs text-pink-100 leading-relaxed mb-4">
               Chatbot AI đang hỗ trợ tự động giải đáp 24/7 về các câu hỏi điểm chuẩn, học bổng, học phí và biểu mẫu hồ sơ.
             </p>
 
             <div className="space-y-2 mb-5">
               <div className="bg-white/10 rounded-xl p-2.5 flex items-center justify-between text-xs">
-                <span className="text-blue-100">Số lượt tư vấn hôm nay</span>
+                <span className="text-pink-100">Số lượt tư vấn hôm nay</span>
                 <span className="font-bold text-white text-sm">342 lượt</span>
               </div>
               <div className="bg-white/10 rounded-xl p-2.5 flex items-center justify-between text-xs">
-                <span className="text-blue-100">Tỷ lệ để lại số điện thoại</span>
+                <span className="text-pink-100">Tỷ lệ để lại số điện thoại</span>
                 <span className="font-bold text-white text-sm">48.2%</span>
               </div>
             </div>
 
             <Link
               to="/chatbot"
-              className="w-full inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-semibold text-xs py-2.5 rounded-xl hover:bg-blue-50 transition shadow-xs"
+              className="w-full inline-flex items-center justify-center gap-2 bg-white text-fuchsia-700 font-semibold text-xs py-2.5 rounded-xl hover:bg-pink-50 transition shadow-xs"
             >
               <Bot className="w-4 h-4" />
               <span>Trải nghiệm Chatbox AI</span>
@@ -262,14 +262,14 @@ function Dashboard() {
                 className="flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 border border-gray-100 transition group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-pink-50 text-fuchsia-600 flex items-center justify-center">
                     <Plus className="w-4 h-4" />
                   </div>
-                  <span className="text-xs font-semibold text-gray-700 group-hover:text-blue-600">
+                  <span className="text-xs font-semibold text-gray-700 group-hover:text-fuchsia-600">
                     Thêm Thí Sinh Mới
                   </span>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
+                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-fuchsia-600" />
               </Link>
 
               <Link
@@ -277,14 +277,14 @@ function Dashboard() {
                 className="flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 border border-gray-100 transition group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-violet-50 text-violet-600 flex items-center justify-center">
                     <GraduationCap className="w-4 h-4" />
                   </div>
-                  <span className="text-xs font-semibold text-gray-700 group-hover:text-indigo-600">
+                  <span className="text-xs font-semibold text-gray-700 group-hover:text-violet-600">
                     Xét Duyệt Hồ Sơ
                   </span>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-indigo-600" />
+                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-violet-600" />
               </Link>
 
               <Link

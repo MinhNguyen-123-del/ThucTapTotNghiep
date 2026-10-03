@@ -1,4 +1,5 @@
 import type { User, UserRole } from "../types";
+import api from "./api";
 
 export interface LoginRequest {
   email: string;
@@ -13,56 +14,171 @@ export interface RegisterRequest {
   role?: UserRole;
 }
 
+export interface LoginUser extends User {
+  isVerified: boolean;
+}
+
 export interface LoginResponse {
   token: string;
-  user: User;
+  user: LoginUser;
 }
 
 export const authService = {
-  async login(data: LoginRequest): Promise<LoginResponse> {
-    const emailLower = data.email.trim().toLowerCase();
+  // =====================================================
+  // LOGIN
+  // =====================================================
 
-    // Determine role based on email or registered users list
-    let role: UserRole = "user";
-    let fullName = "Thí sinh";
-
-    if (emailLower.includes("admin") || emailLower === "admin@admission.edu.vn") {
-      role = "admin";
-      fullName = "Quản Trị Viên Tuyển Sinh";
-    } else if (emailLower.includes("manager") || emailLower.includes("truongphong")) {
-      role = "manager";
-      fullName = "Trưởng Ban Tuyển Sinh";
-    } else {
-      // Check if registered locally
-      const storedUsersStr = localStorage.getItem("registered_accounts");
-      const storedUsers = storedUsersStr ? JSON.parse(storedUsersStr) : [];
-      const found = storedUsers.find((u: any) => u.email.toLowerCase() === emailLower);
-
-      if (found) {
-        role = found.role || "user";
-        fullName = found.fullName || found.name || "Thí sinh";
-      } else {
-        role = "user";
-        fullName = data.email.split("@")[0] || "Thí sinh";
+  async login(
+    data: LoginRequest
+  ): Promise<LoginResponse> {
+    const response = await api.post(
+      "/api/auth/signin",
+      {
+        email: data.email.trim().toLowerCase(),
+        password: data.password,
       }
+    );
+
+    const responseData = response.data;
+
+    console.log(
+      "AUTH LOGIN RESPONSE:",
+      responseData
+    );
+
+    // ===================================================
+    // LẤY DATA TỪ BACKEND
+    // ===================================================
+
+    const backendData =
+      responseData?.data || responseData;
+
+    // Backend có thể trả user ở:
+    // data.user
+    // hoặc response.data.user
+    const backendUser =
+      backendData?.user ||
+      responseData?.user;
+
+    if (!backendUser) {
+      console.error(
+        "Không tìm thấy thông tin user:",
+        responseData
+      );
+
+      throw new Error(
+        "Backend không trả về thông tin người dùng."
+      );
     }
 
-    const user: User = {
-      id: Date.now().toString(),
-      fullName,
-      email: data.email,
-      role,
-      candidateCode: role === "user" ? "TS2026-88991" : undefined,
-      appliedMajor: role === "user" ? "Công nghệ Thông tin" : undefined,
+    // ===================================================
+    // LẤY TOKEN
+    // ===================================================
+
+    const token =
+      backendData?.accessToken ||
+      backendData?.token ||
+      responseData?.accessToken ||
+      responseData?.token;
+
+    if (!token) {
+      console.error(
+        "Không tìm thấy access token:",
+        responseData
+      );
+
+      throw new Error(
+        "Backend không trả về access token."
+      );
+    }
+
+    // ===================================================
+    // CHUẨN HÓA USER
+    // ===================================================
+
+    const user: LoginUser = {
+      ...backendUser,
+
+      // MongoDB thường trả _id
+      id:
+        backendUser.id ||
+        backendUser._id,
+
+      // Backend có thể dùng name hoặc fullName
+      fullName:
+        backendUser.fullName ||
+        backendUser.name ||
+        "Thí sinh",
+
+      email:
+        backendUser.email,
+
+      // Chuẩn hóa role
+      role:
+        backendUser.role ||
+        "user",
+
+      // Backend có thể dùng isEmailVerified
+      isVerified:
+        backendUser.isEmailVerified === true ||
+        backendUser.isVerified === true,
     };
 
-    const token = "jwt-token-" + Date.now();
+    console.log(
+      "LOGIN USER:",
+      user
+    );
 
-    localStorage.setItem("token", token);
-    localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("userEmail", data.email);
-    localStorage.setItem("userRole", role);
-    localStorage.setItem("user", JSON.stringify(user));
+    console.log(
+      "LOGIN TOKEN:",
+      token
+    );
+
+    // ===================================================
+    // LƯU TOKEN + USER
+    // ===================================================
+
+    localStorage.setItem(
+      "token",
+      token
+    );
+
+    localStorage.setItem(
+      "user",
+      JSON.stringify(user)
+    );
+
+    localStorage.setItem(
+      "userEmail",
+      user.email
+    );
+
+    localStorage.setItem(
+      "userRole",
+      user.role
+    );
+
+    // ===================================================
+    // ĐÁNH DẤU ĐÃ ĐĂNG NHẬP
+    // ===================================================
+    //
+    // Có token = đăng nhập thành công.
+    // Không dùng isVerified để quyết định
+    // isAuthenticated.
+    //
+
+    localStorage.setItem(
+      "isLoggedIn",
+      "true"
+    );
+
+    console.log(
+      "LOGIN SUCCESS - TOKEN SAVED"
+    );
+
+    // ===================================================
+    // RETURN
+    // ===================================================
 
     return {
       token,
@@ -70,51 +186,94 @@ export const authService = {
     };
   },
 
-  async register(data: RegisterRequest) {
-    const emailLower = data.email.trim().toLowerCase();
-    const role: UserRole = data.role || (emailLower.includes("admin") ? "admin" : "user");
+  // =====================================================
+  // REGISTER
+  // =====================================================
 
-    const newUser = {
-      id: `usr-${Date.now()}`,
-      fullName: data.fullName,
-      email: data.email,
-      role,
-      candidateCode: `TS2026-${Math.floor(10000 + Math.random() * 90000)}`,
-      createdAt: new Date().toISOString(),
-    };
+  async register(
+    data: RegisterRequest
+  ) {
+    const response =
+      await api.post(
+        "/api/auth/signup",
+        {
+          name: data.fullName,
+          email: data.email
+            .trim()
+            .toLowerCase(),
+          password: data.password,
+        }
+      );
 
-    const storedUsersStr = localStorage.getItem("registered_accounts");
-    const storedUsers = storedUsersStr ? JSON.parse(storedUsersStr) : [];
-    storedUsers.push(newUser);
-    localStorage.setItem("registered_accounts", JSON.stringify(storedUsers));
+    console.log(
+      "REGISTER RESPONSE:",
+      response.data
+    );
 
-    return {
-      success: true,
-      message: "Đăng ký tài khoản thành công!",
-      user: newUser,
-    };
+    return response.data;
   },
 
-  async forgotPassword(email: string) {
-    return {
-      success: true,
-      message: `Hướng dẫn đặt lại mật khẩu đã được gửi đến ${email}.`,
-    };
+  // =====================================================
+  // VERIFY EMAIL
+  // =====================================================
+
+  async verifyEmail(
+    token: string
+  ) {
+    const response =
+      await api.post(
+        "/api/auth/verify-email",
+        {
+          token,
+        }
+      );
+
+    return response.data;
   },
 
-  async resetPassword(token: string, newPassword: string) {
-    return {
-      success: true,
-      message: "Đặt lại mật khẩu thành công!",
-    };
+  // =====================================================
+  // FORGOT PASSWORD
+  // =====================================================
+
+  async forgotPassword(
+    email: string
+  ) {
+    const response =
+      await api.post(
+        "/api/auth/forgot-password",
+        {
+          email: email
+            .trim()
+            .toLowerCase(),
+        }
+      );
+
+    return response.data;
   },
 
-  async verifyEmail(token: string) {
-    return {
-      success: true,
-      message: "Tài khoản đã được xác thực thành công!",
-    };
+  // =====================================================
+  // RESET PASSWORD
+  // =====================================================
+
+  async resetPassword(
+    token: string,
+    newPassword: string
+  ) {
+    const response =
+      await api.post(
+        "/api/auth/reset-password",
+        {
+          token,
+          newPassword,
+        }
+      );
+
+    return response.data;
   },
+
+  // =====================================================
+  // LOGOUT
+  // =====================================================
 
   logout() {
     localStorage.removeItem("token");
@@ -124,34 +283,51 @@ export const authService = {
     localStorage.removeItem("userRole");
   },
 
+  // =====================================================
+  // GET TOKEN
+  // =====================================================
+
   getToken() {
-    return localStorage.getItem("token") || (localStorage.getItem("isLoggedIn") === "true" ? "dummy-token" : null);
+    return (
+      localStorage.getItem("token") ||
+      null
+    );
   },
 
-  getUser(): User | null {
-    const userStr = localStorage.getItem("user");
-    if (userStr) {
-      try {
-        return JSON.parse(userStr);
-      } catch {
-        // continue
-      }
+  // =====================================================
+  // GET USER
+  // =====================================================
+
+  getUser(): LoginUser | null {
+    const userStr =
+      localStorage.getItem("user");
+
+    if (!userStr) {
+      return null;
     }
 
-    const email = localStorage.getItem("userEmail");
-    const role = (localStorage.getItem("userRole") as UserRole) || "admin";
-    if (email) {
-      return {
-        id: "1",
-        fullName: role === "admin" ? "Quản trị viên Tuyển sinh" : "Thí sinh",
-        email,
-        role,
-      };
+    try {
+      return JSON.parse(userStr);
+    } catch (error) {
+      console.error(
+        "Không thể đọc user từ localStorage:",
+        error
+      );
+
+      return null;
     }
-    return null;
   },
+
+  // =====================================================
+  // IS AUTHENTICATED
+  // =====================================================
 
   isAuthenticated(): boolean {
-    return !!localStorage.getItem("token") || localStorage.getItem("isLoggedIn") === "true";
+    const token =
+      localStorage.getItem("token");
+
+    // Chỉ cần có token là đã đăng nhập.
+    // Không phụ thuộc isVerified.
+    return !!token;
   },
 };

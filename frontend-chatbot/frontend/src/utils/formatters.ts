@@ -50,7 +50,7 @@ export function formatAdmissionMethod(method: string): string {
 export function formatLeadStatus(status: string): { label: string; bg: string; text: string } {
   switch (status) {
     case 'new':
-      return { label: 'Mới đăng ký', bg: 'bg-blue-50', text: 'text-blue-700' };
+      return { label: 'Mới đăng ký', bg: 'bg-pink-50', text: 'text-fuchsia-700' };
     case 'contacted':
       return { label: 'Đã liên hệ', bg: 'bg-amber-50', text: 'text-amber-700' };
     case 'counseled':
@@ -73,7 +73,7 @@ export function formatApplicationStatus(status: string): { label: string; bg: st
     case 'accepted':
       return { label: 'Đã trúng tuyển', bg: 'bg-emerald-50', text: 'text-emerald-700' };
     case 'enrolled':
-      return { label: 'Đã nhập học', bg: 'bg-indigo-50', text: 'text-indigo-700' };
+      return { label: 'Đã nhập học', bg: 'bg-violet-50', text: 'text-violet-700' };
     case 'rejected':
       return { label: 'Không trúng tuyển', bg: 'bg-red-50', text: 'text-red-700' };
     default:

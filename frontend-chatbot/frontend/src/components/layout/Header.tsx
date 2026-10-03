@@ -1,3 +1,4 @@
+import tftLogo from '../../assets/tft-logo.png';
 import { useNavigate, Link } from 'react-router-dom';
 import { Bot, LogOut, Bell, User as UserIcon, Shield, ExternalLink } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
@@ -15,19 +16,23 @@ function Header() {
     <header className="flex h-16 items-center justify-between border-b border-gray-200 bg-white px-6 shadow-xs sticky top-0 z-30">
       {/* Logo */}
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20">
-          <Bot className="w-5 h-5" />
+        <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-black shadow-md">
+          <img
+            src={tftLogo}
+            alt="TFT Academy"
+            className="h-full w-full object-contain"
+          />
         </div>
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-lg font-bold text-blue-600 tracking-tight leading-tight">
-              Admission Chatbot
+              TFT Academy
             </h1>
             <span className="bg-red-50 text-red-700 border border-red-200 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
               <Shield className="w-3 h-3" /> ADMIN
             </span>
           </div>
-          <p className="text-xs text-gray-500 font-medium">Hệ thống Quản trị Tuyển sinh Đại học & Tư vấn AI</p>
+          <p className="text-xs text-gray-500 font-medium">Đào tạo nhân tài</p>
         </div>
       </div>
 

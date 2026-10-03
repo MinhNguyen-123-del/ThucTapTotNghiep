@@ -69,7 +69,7 @@ export default function UserPayments() {
   return (
     <div className="space-y-6">
       <div>
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-semibold mb-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 text-fuchsia-700 border border-pink-200 text-xs font-semibold mb-2">
           <CreditCard className="w-3.5 h-3.5" />
           <span>Cổng Thanh Toán Trực Tuyến</span>
         </div>
@@ -82,7 +82,7 @@ export default function UserPayments() {
       </div>
 
       {/* Pending Fee Banner */}
-      <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-slate-900 rounded-3xl p-6 sm:p-7 text-white shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="bg-gradient-to-r from-fuchsia-600 via-amber-400 to-teal-600 rounded-3xl p-6 sm:p-7 text-white shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-1.5 max-w-xl">
           <span className="text-[11px] font-bold uppercase tracking-wider bg-white/15 px-2.5 py-1 rounded-full">
             Khoản Cần Nộp Để Hoàn Tất Nhập Học
@@ -90,7 +90,7 @@ export default function UserPayments() {
           <h2 className="text-xl font-bold mt-2">
             Lệ phí xác nhận nhập học & BHYT ban đầu
           </h2>
-          <p className="text-xs text-blue-100 leading-relaxed">
+          <p className="text-xs text-pink-100 leading-relaxed">
             Dành cho thí sinh đã đủ điều kiện trúng tuyển sớm. Khoản tạm thu sẽ được khấu trừ trực tiếp vào biên lai học phí học kỳ 1.
           </p>
           <div className="text-2xl font-extrabold text-amber-300 pt-1">
@@ -109,7 +109,7 @@ export default function UserPayments() {
             });
             setIsPayModalOpen(true);
           }}
-          className="px-6 py-3 bg-white text-blue-700 hover:bg-blue-50 font-bold text-xs sm:text-sm rounded-xl transition shadow-md self-start md:self-auto cursor-pointer"
+          className="px-6 py-3 bg-white text-fuchsia-700 hover:bg-pink-50 font-bold text-xs sm:text-sm rounded-xl transition shadow-md self-start md:self-auto cursor-pointer"
         >
           Nộp Trực Tuyến Ngay
         </button>
@@ -140,7 +140,7 @@ export default function UserPayments() {
             <tbody className="divide-y divide-gray-100">
               {payments.map((p) => (
                 <tr key={p.id} className="hover:bg-gray-50/80 transition">
-                  <td className="px-6 py-4 font-mono font-semibold text-blue-600">
+                  <td className="px-6 py-4 font-mono font-semibold text-fuchsia-600">
                     {p.transactionCode}
                   </td>
                   <td className="px-6 py-4 font-medium text-gray-900">
@@ -170,7 +170,7 @@ export default function UserPayments() {
                     <button
                       type="button"
                       onClick={() => alert(`Đang tải biên lai điện tử mã ${p.transactionCode}...`)}
-                      className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 font-semibold text-[11px] p-1 rounded-lg hover:bg-blue-50 transition cursor-pointer"
+                      className="inline-flex items-center gap-1 text-fuchsia-600 hover:text-fuchsia-700 font-semibold text-[11px] p-1 rounded-lg hover:bg-pink-50 transition cursor-pointer"
                     >
                       <Download className="w-3.5 h-3.5" />
                       <span>Tải PDF</span>
@@ -200,10 +200,10 @@ export default function UserPayments() {
           </div>
         ) : (
           <form onSubmit={handlePay} className="space-y-4 text-xs">
-            <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 space-y-1">
+            <div className="bg-pink-50 p-4 rounded-xl border border-pink-100 space-y-1">
               <span className="text-gray-500 text-[11px]">Khoản thanh toán:</span>
               <p className="font-bold text-gray-900 text-sm">{selectedFee.title}</p>
-              <p className="text-lg font-extrabold text-blue-600 pt-1">
+              <p className="text-lg font-extrabold text-fuchsia-600 pt-1">
                 {formatCurrencyVND(selectedFee.amount)}
               </p>
             </div>
@@ -217,7 +217,7 @@ export default function UserPayments() {
                     name="method"
                     checked={selectedFee.method === 'vnpay'}
                     onChange={() => setSelectedFee({ ...selectedFee, method: 'vnpay' })}
-                    className="text-blue-600"
+                    className="text-fuchsia-600"
                   />
                   <div>
                     <strong className="block text-gray-900 text-xs">Cổng VNPay</strong>
@@ -231,7 +231,7 @@ export default function UserPayments() {
                     name="method"
                     checked={selectedFee.method === 'momo'}
                     onChange={() => setSelectedFee({ ...selectedFee, method: 'momo' })}
-                    className="text-blue-600"
+                    className="text-fuchsia-600"
                   />
                   <div>
                     <strong className="block text-gray-900 text-xs">Ví MoMo</strong>
@@ -256,7 +256,7 @@ export default function UserPayments() {
               </button>
               <button
                 type="submit"
-                className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-xs transition cursor-pointer flex items-center gap-1.5"
+                className="px-5 py-2.5 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl font-bold shadow-xs transition cursor-pointer flex items-center gap-1.5"
               >
                 <ShieldCheck className="w-4 h-4" />
                 <span>Xác Nhận Thanh Toán</span>

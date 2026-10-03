@@ -2,6 +2,7 @@ const FAQ = require("../models/faq.model");
 const Admission = require("../models/admission.model");
 const Major = require("../models/major.model");
 const { askGemini } = require("./gemini.service");
+const { askRAG } = require("./rag.service");
 // ======================================================
 // BỘ INTENT CHUẨN
 // ======================================================
@@ -855,7 +856,43 @@ const answerMajorQuestion = async (
     }
 
     // ================================================
-// KHÔNG XÁC ĐỊNH → GEMINI
+// KHÔNG XÁC ĐỊNH → RAG
+// ================================================
+
+try {
+
+    console.log(
+        "→ Không xác định intent ngành, thử Knowledge Base..."
+    );
+
+    const ragAnswer =
+        await askRAG(question);
+
+    if (
+        ragAnswer &&
+        !ragAnswer.toLowerCase().includes(
+            "chưa tìm thấy thông tin phù hợp"
+        )
+    ) {
+
+        console.log(
+            "→ Trả lời từ RAG"
+        );
+
+        return ragAnswer;
+    }
+
+} catch (error) {
+
+    console.error(
+        "RAG ERROR trong answerMajorQuestion:",
+        error.message
+    );
+}
+
+
+// ================================================
+// RAG không có dữ liệu → GEMINI
 // ================================================
 
 const geminiContext = `
@@ -1109,7 +1146,55 @@ const askAI = async (
             return faqAnswer;
         }
     }
+// ================================================
+// KNOWLEDGE BASE / RAG
+// ================================================
 
+try {
+    console.log(
+        "→ Thử tìm thông tin trong Knowledge Base..."
+    );
+
+    const ragAnswer = await askRAG(question);
+
+    if (ragAnswer) {
+        const normalizedRagAnswer = String(ragAnswer)
+            .toLowerCase()
+            .trim();
+
+        const ragNotFound =
+            normalizedRagAnswer.includes(
+                "chưa tìm thấy thông tin phù hợp"
+            ) ||
+            normalizedRagAnswer.includes(
+                "không tìm thấy thông tin phù hợp"
+            ) ||
+            normalizedRagAnswer.includes(
+                "không có thông tin phù hợp"
+            ) ||
+            normalizedRagAnswer.includes(
+                "chưa có thông tin"
+            );
+
+        if (!ragNotFound) {
+            console.log(
+                "→ Trả lời từ Knowledge Base / RAG"
+            );
+
+            return ragAnswer;
+        }
+
+        console.log(
+            "→ Knowledge Base / RAG không tìm thấy thông tin"
+        );
+    }
+
+} catch (error) {
+    console.error(
+        "RAG ERROR:",
+        error.message
+    );
+}
     // ================================================
     // NỘP HỒ SƠ
     // ================================================
@@ -1197,7 +1282,6 @@ return await askGemini(
     geminiContext
 );
 };
-
 // ======================================================
 // 8. XÓA CONTEXT
 // ======================================================

@@ -16,31 +16,44 @@ const sendVerificationEmail = async (email, name, token) => {
     const verifyUrl =
         `${process.env.CLIENT_URL}/verify-email?token=${token}`;
 
-    await transporter.sendMail({
-from: `"DeepCode Academy" <${process.env.EMAIL_USER}>`,
-        to: email,
-        subject: "Xác thực tài khoản",
+    console.log("EMAIL USER:", process.env.EMAIL_USER);
+    console.log("EMAIL TO:", email);
 
-        html: `
-            <h2>Xin chào ${name}</h2>
+    try {
+        const info = await transporter.sendMail({
+            from: `"DeepCode Academy" <${process.env.EMAIL_USER}>`,
+            to: email,
+            subject: "Xác thực tài khoản",
 
-            <p>
-                Cảm ơn bạn đã đăng ký tài khoản.
-            </p>
+            html: `
+                <h2>Xin chào ${name}</h2>
 
-            <p>
-                Vui lòng click vào link bên dưới để xác thực email:
-            </p>
+                <p>
+                    Cảm ơn bạn đã đăng ký tài khoản.
+                </p>
 
-            <a href="${verifyUrl}">
-                Xác thực email
-            </a>
+                <p>
+                    Vui lòng click vào link bên dưới để xác thực email:
+                </p>
 
-            <p>
-                Link có hiệu lực trong ${process.env.EMAIL_VERIFY_EXPIRES_MINUTES || 15} phút.
-            </p>
-        `
-    });
+                <a href="${verifyUrl}">
+                    Xác thực email
+                </a>
+
+                <p>
+                    Link có hiệu lực trong ${
+                        process.env.EMAIL_VERIFY_EXPIRES_MINUTES || 15
+                    } phút.
+                </p>
+            `
+        });
+
+        console.log("EMAIL SENT:", info.messageId);
+
+    } catch (error) {
+        console.error("EMAIL ERROR:", error);
+        throw error;
+    }
 };
 
 // Gửi email đặt lại mật khẩu

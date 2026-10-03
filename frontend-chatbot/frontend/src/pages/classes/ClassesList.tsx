@@ -98,7 +98,7 @@ function ClassesList() {
         <button
           type="button"
           onClick={handleOpenAddModal}
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
+          className="inline-flex items-center gap-2 bg-fuchsia-600 hover:bg-fuchsia-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-xs transition cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Mở Đợt Tuyển Sinh Mới</span>
@@ -116,7 +116,7 @@ function ClassesList() {
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-50 text-blue-700">
+                  <span className="font-mono text-xs font-semibold px-2.5 py-1 rounded-md bg-pink-50 text-fuchsia-700">
                     {b.code}
                   </span>
                   <span
@@ -154,7 +154,7 @@ function ClassesList() {
                   <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
                     <div
                       className={`h-full rounded-full transition-all duration-500 ${
-                        percent >= 90 ? 'bg-amber-500' : 'bg-blue-600'
+                        percent >= 90 ? 'bg-amber-500' : 'bg-fuchsia-600'
                       }`}
                       style={{ width: `${percent}%` }}
                     />
@@ -183,7 +183,7 @@ function ClassesList() {
                   <button
                     type="button"
                     onClick={() => handleOpenEditModal(b)}
-                    className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition cursor-pointer"
+                    className="p-1.5 text-fuchsia-600 hover:bg-pink-50 rounded-lg transition cursor-pointer"
                     title="Sửa"
                   >
                     <Edit2 className="w-4 h-4" />
@@ -219,7 +219,7 @@ function ClassesList() {
                 value={formData.code}
                 onChange={(e) => setFormData({ ...formData, code: e.target.value })}
                 placeholder="DOT-2026-01"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500 font-mono"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500 font-mono"
               />
             </div>
             <div>
@@ -230,7 +230,7 @@ function ClassesList() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="Xét tuyển Sớm - Học bạ THPT Đợt 1"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -242,7 +242,7 @@ function ClassesList() {
                 type="number"
                 value={formData.targetQuota}
                 onChange={(e) => setFormData({ ...formData, targetQuota: parseInt(e.target.value) || 0 })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -250,7 +250,7 @@ function ClassesList() {
               <select
                 value={formData.status}
                 onChange={(e) => setFormData({ ...formData, status: e.target.value as any })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="open">Đang mở nhận hồ sơ</option>
                 <option value="reviewing">Đang chấm xét tuyển</option>
@@ -266,7 +266,7 @@ function ClassesList() {
                 type="date"
                 value={formData.startDate}
                 onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -275,7 +275,7 @@ function ClassesList() {
                 type="date"
                 value={formData.endDate}
                 onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -290,7 +290,7 @@ function ClassesList() {
             </button>
             <button
               type="submit"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
+              className="px-5 py-2.5 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl font-semibold shadow-xs transition cursor-pointer"
             >
               {editingBatch ? 'Cập nhật' : 'Tạo Đợt Mới'}
             </button>

@@ -12,10 +12,120 @@ const knowledgeDir =
     path.join(__dirname, "knowledge");
 
 
+// =====================================================
+// 1. LẤY DANH SÁCH DOCUMENT HIỆN TẠI
+// =====================================================
+
+async function listDocuments() {
+
+    const url =
+        `https://generativelanguage.googleapis.com/v1beta/` +
+        `${KNOWLEDGE_STORE}/documents?key=${API_KEY}`;
+
+    const response =
+        await fetch(url, {
+            method: "GET"
+        });
+
+    const text =
+        await response.text();
+
+    if (!response.ok) {
+
+        throw new Error(
+            `Không thể lấy danh sách Document:\n${text}`
+        );
+    }
+
+    const data =
+        JSON.parse(text);
+
+    return data.documents || [];
+}
+
+
+// =====================================================
+// 2. XÓA DOCUMENT
+// =====================================================
+
+async function deleteDocument(documentName) {
+
+    const url =
+        `https://generativelanguage.googleapis.com/v1beta/` +
+        `${documentName}?key=${API_KEY}&force=true`;
+
+    const response =
+        await fetch(url, {
+            method: "DELETE"
+        });
+
+    const text =
+        await response.text();
+
+    if (!response.ok) {
+
+        throw new Error(
+            `Không thể xóa Document ${documentName}:\n${text}`
+        );
+    }
+
+    console.log(
+        "✓ Đã xóa:",
+        documentName
+    );
+}
+
+
+// =====================================================
+// 3. XÓA TOÀN BỘ DOCUMENT CŨ
+// =====================================================
+
+async function deleteOldDocuments() {
+
+    console.log("\n================================");
+    console.log("KIỂM TRA DOCUMENT CŨ");
+    console.log("================================");
+
+    const documents =
+        await listDocuments();
+
+    console.log(
+        `Tìm thấy ${documents.length} Document cũ.`
+    );
+
+    if (documents.length === 0) {
+
+        console.log(
+            "Không có Document cũ."
+        );
+
+        return;
+    }
+
+    for (const document of documents) {
+
+        await deleteDocument(
+            document.name
+        );
+    }
+
+    console.log(
+        "\n✓ Đã xóa toàn bộ Document cũ."
+    );
+}
+
+
+// =====================================================
+// 4. UPLOAD FILE MỚI
+// =====================================================
+
 async function uploadFile(fileName) {
 
     const filePath =
-        path.join(knowledgeDir, fileName);
+        path.join(
+            knowledgeDir,
+            fileName
+        );
 
     const fileBuffer =
         fs.readFileSync(filePath);
@@ -26,22 +136,29 @@ async function uploadFile(fileName) {
 
     console.log("\n--------------------------------");
     console.log("Đang upload:", fileName);
-    console.log("Dung lượng:", fileSize, "bytes");
+    console.log(
+        "Dung lượng:",
+        fileSize,
+        "bytes"
+    );
 
 
     // ============================================
-    // 1. START RESUMABLE UPLOAD
+    // START RESUMABLE UPLOAD
     // ============================================
 
     const startUrl =
-        `https://generativelanguage.googleapis.com/upload/v1beta/${KNOWLEDGE_STORE}:uploadToFileSearchStore?key=${API_KEY}`;
+        `https://generativelanguage.googleapis.com/upload/v1beta/` +
+        `${KNOWLEDGE_STORE}:uploadToFileSearchStore?key=${API_KEY}`;
 
 
     const startResponse =
         await fetch(startUrl, {
+
             method: "POST",
 
             headers: {
+
                 "X-Goog-Upload-Protocol":
                     "resumable",
 
@@ -82,7 +199,7 @@ async function uploadFile(fileName) {
 
 
     // ============================================
-    // 2. LẤY UPLOAD URL
+    // LẤY UPLOAD URL
     // ============================================
 
     const uploadUrl =
@@ -105,7 +222,7 @@ async function uploadFile(fileName) {
 
 
     // ============================================
-    // 3. UPLOAD + FINALIZE
+    // UPLOAD + FINALIZE
     // ============================================
 
     const uploadResponse =
@@ -154,26 +271,33 @@ async function uploadFile(fileName) {
         "✓ Upload thành công:",
         fileName
     );
-
-    console.log(
-        "Google response:",
-        responseText
-    );
 }
 
 
-// ============================================
-// MAIN
-// ============================================
+// =====================================================
+// 5. MAIN
+// =====================================================
 
 async function setupKnowledge() {
 
     try {
 
         console.log("================================");
-        console.log("UPLOAD KNOWLEDGE BASE - REST");
+        console.log("CẬP NHẬT KNOWLEDGE BASE");
         console.log("================================");
 
+        console.log(
+            "\nKnowledge Store:"
+        );
+
+        console.log(
+            KNOWLEDGE_STORE
+        );
+
+
+        // ============================================
+        // KIỂM TRA API KEY
+        // ============================================
 
         if (!API_KEY) {
 
@@ -182,6 +306,22 @@ async function setupKnowledge() {
             );
         }
 
+
+        // ============================================
+        // KIỂM TRA THƯ MỤC KNOWLEDGE
+        // ============================================
+
+        if (!fs.existsSync(knowledgeDir)) {
+
+            throw new Error(
+                `Không tìm thấy thư mục: ${knowledgeDir}`
+            );
+        }
+
+
+        // ============================================
+        // LẤY FILE TXT
+        // ============================================
 
         const files =
             fs.readdirSync(knowledgeDir)
@@ -193,17 +333,45 @@ async function setupKnowledge() {
                 );
 
 
+        if (files.length === 0) {
+
+            throw new Error(
+                "Không tìm thấy file .txt nào trong thư mục knowledge."
+            );
+        }
+
+
         console.log(
-            `\nTìm thấy ${files.length} tài liệu:\n`
+            `\nTìm thấy ${files.length} tài liệu mới:\n`
         );
 
 
         files.forEach(file => {
-            console.log(" -", file);
+
+            console.log(
+                " -",
+                file
+            );
+
         });
 
 
-        // Upload tuần tự
+        // ============================================
+        // XÓA DOCUMENT CŨ
+        // ============================================
+
+        await deleteOldDocuments();
+
+
+        // ============================================
+        // UPLOAD DOCUMENT MỚI
+        // ============================================
+
+        console.log("\n================================");
+        console.log("UPLOAD DỮ LIỆU MỚI");
+        console.log("================================");
+
+
         for (const fileName of files) {
 
             await uploadFile(fileName);
@@ -211,8 +379,12 @@ async function setupKnowledge() {
         }
 
 
+        // ============================================
+        // HOÀN TẤT
+        // ============================================
+
         console.log("\n================================");
-        console.log("KNOWLEDGE BASE HOÀN TẤT");
+        console.log("KNOWLEDGE BASE CẬP NHẬT XONG");
         console.log("================================");
 
         console.log(
@@ -224,19 +396,24 @@ async function setupKnowledge() {
         );
 
         console.log(
-            "\nSố tài liệu:",
+            "\nSố tài liệu mới:",
             files.length
+        );
+
+        console.log(
+            "\nRAG có thể sử dụng dữ liệu mới."
         );
 
 
     } catch (error) {
 
         console.error("\n================================");
-        console.error("RAG SETUP ERROR");
+        console.error("RAG UPDATE ERROR");
         console.error("================================");
 
-        console.error(error.message);
-
+        console.error(
+            error.message
+        );
     }
 }
 

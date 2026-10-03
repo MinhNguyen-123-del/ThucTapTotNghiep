@@ -19,12 +19,12 @@ export function StatCard({
 }: StatCardProps) {
   const colorSchemes = {
     blue: {
-      iconBg: 'bg-blue-50 text-blue-600',
-      badge: 'text-blue-700 bg-blue-50',
+      iconBg: 'bg-pink-50 text-fuchsia-600',
+      badge: 'text-fuchsia-700 bg-pink-50',
     },
     indigo: {
-      iconBg: 'bg-indigo-50 text-indigo-600',
-      badge: 'text-indigo-700 bg-indigo-50',
+      iconBg: 'bg-violet-50 text-violet-600',
+      badge: 'text-violet-700 bg-violet-50',
     },
     emerald: {
       iconBg: 'bg-emerald-50 text-emerald-600',

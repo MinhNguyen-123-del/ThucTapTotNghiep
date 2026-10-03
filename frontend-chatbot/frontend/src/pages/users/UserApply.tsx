@@ -105,7 +105,7 @@ export default function UserApply() {
           </h2>
           <p className="text-xs sm:text-sm text-gray-500 mt-2 max-w-md mx-auto leading-relaxed">
             Hệ thống đã tiếp nhận nguyện vọng ngành <strong>{formData.majorName}</strong> với tổng điểm xét tuyển{' '}
-            <strong className="text-blue-600">{totalScore} điểm</strong>.
+            <strong className="text-fuchsia-600">{totalScore} điểm</strong>.
           </p>
         </div>
 
@@ -136,7 +136,7 @@ export default function UserApply() {
           <button
             type="button"
             onClick={() => navigate('/user')}
-            className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl shadow-xs transition cursor-pointer flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-6 py-3 bg-fuchsia-600 hover:bg-fuchsia-700 text-white text-xs font-semibold rounded-xl shadow-xs transition cursor-pointer flex items-center justify-center gap-2"
           >
             <span>Về Trang Tổng Quan Hồ Sơ</span>
             <ArrowRight className="w-4 h-4" />
@@ -149,7 +149,7 @@ export default function UserApply() {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       <div>
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-semibold mb-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 text-fuchsia-700 border border-pink-200 text-xs font-semibold mb-2">
           <GraduationCap className="w-3.5 h-3.5" />
           <span>Xét Tuyển Sớm Năm 2026</span>
         </div>
@@ -165,7 +165,7 @@ export default function UserApply() {
         {/* Section 1: Candidate Personal Info */}
         <div className="bg-white rounded-2xl border border-gray-200/80 p-6 shadow-xs space-y-4">
           <h3 className="text-sm font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
-            <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs">
+            <span className="w-5 h-5 rounded-full bg-pink-100 text-fuchsia-600 flex items-center justify-center text-xs">
               1
             </span>
             <span>Thông Tin Cá Nhân Thí Sinh</span>
@@ -179,7 +179,7 @@ export default function UserApply() {
                 required
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -189,7 +189,7 @@ export default function UserApply() {
                 required
                 value={formData.cccd}
                 onChange={(e) => setFormData({ ...formData, cccd: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500 font-mono"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500 font-mono"
               />
             </div>
             <div>
@@ -199,7 +199,7 @@ export default function UserApply() {
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -212,7 +212,7 @@ export default function UserApply() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -223,7 +223,7 @@ export default function UserApply() {
                 value={formData.highSchool}
                 onChange={(e) => setFormData({ ...formData, highSchool: e.target.value })}
                 placeholder="THPT Chu Văn An"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -233,7 +233,7 @@ export default function UserApply() {
                 required
                 value={formData.province}
                 onChange={(e) => setFormData({ ...formData, province: e.target.value })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -242,7 +242,7 @@ export default function UserApply() {
         {/* Section 2: Choose Major & Method */}
         <div className="bg-white rounded-2xl border border-gray-200/80 p-6 shadow-xs space-y-4">
           <h3 className="text-sm font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
-            <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs">
+            <span className="w-5 h-5 rounded-full bg-pink-100 text-fuchsia-600 flex items-center justify-center text-xs">
               2
             </span>
             <span>Chọn Nguyện Vọng Ngành Đào Tạo</span>
@@ -254,7 +254,7 @@ export default function UserApply() {
               <select
                 value={formData.majorCode}
                 onChange={(e) => handleMajorChange(e.target.value)}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 {INITIAL_COURSES.map((c) => (
                   <option key={c.id} value={c.code}>
@@ -269,7 +269,7 @@ export default function UserApply() {
               <select
                 value={formData.admissionMethod}
                 onChange={(e) => setFormData({ ...formData, admissionMethod: e.target.value as any })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               >
                 <option value="hoc_ba">Xét điểm Học bạ THPT (Tổ hợp 3 môn)</option>
                 <option value="thpt">Xét điểm thi Tốt nghiệp THPT 2026</option>
@@ -280,14 +280,14 @@ export default function UserApply() {
           </div>
 
           {/* Major Spotlight Info */}
-          <div className="bg-blue-50/60 p-4 rounded-xl border border-blue-100 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="bg-pink-50/60 p-4 rounded-xl border border-pink-100 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <p className="font-bold text-blue-900">{selectedCourse.name}</p>
+              <p className="font-bold text-fuchsia-900">{selectedCourse.name}</p>
               <p className="text-gray-600 text-[11px] mt-0.5">{selectedCourse.description}</p>
             </div>
             <div className="text-left sm:text-right shrink-0">
               <span className="text-[11px] text-gray-500">Tổ hợp môn:</span>
-              <p className="font-mono font-bold text-blue-700">{selectedCourse.subjectGroups.join(', ')}</p>
+              <p className="font-mono font-bold text-fuchsia-700">{selectedCourse.subjectGroups.join(', ')}</p>
             </div>
           </div>
         </div>
@@ -295,7 +295,7 @@ export default function UserApply() {
         {/* Section 3: Subject Scores */}
         <div className="bg-white rounded-2xl border border-gray-200/80 p-6 shadow-xs space-y-4">
           <h3 className="text-sm font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
-            <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs">
+            <span className="w-5 h-5 rounded-full bg-pink-100 text-fuchsia-600 flex items-center justify-center text-xs">
               3
             </span>
             <span>Nhập Điểm 3 Môn Thuộc Tổ Hợp Xét Tuyển</span>
@@ -312,7 +312,7 @@ export default function UserApply() {
                 required
                 value={formData.subject1}
                 onChange={(e) => setFormData({ ...formData, subject1: parseFloat(e.target.value) || 0 })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -325,7 +325,7 @@ export default function UserApply() {
                 required
                 value={formData.subject2}
                 onChange={(e) => setFormData({ ...formData, subject2: parseFloat(e.target.value) || 0 })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
             <div>
@@ -338,7 +338,7 @@ export default function UserApply() {
                 required
                 value={formData.subject3}
                 onChange={(e) => setFormData({ ...formData, subject3: parseFloat(e.target.value) || 0 })}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:border-fuchsia-500"
               />
             </div>
           </div>
@@ -346,7 +346,7 @@ export default function UserApply() {
           <div className="bg-slate-50 p-4 rounded-xl border border-gray-200/80 flex items-center justify-between text-xs">
             <div>
               <span className="text-gray-500">Tổng điểm xét tuyển dự kiến:</span>
-              <p className="text-xl font-extrabold text-blue-600 mt-0.5">{totalScore} / 30.0</p>
+              <p className="text-xl font-extrabold text-fuchsia-600 mt-0.5">{totalScore} / 30.0</p>
             </div>
             <div className="text-right">
               <span className="text-gray-500 text-[11px]">Điểm chuẩn năm trước:</span>
@@ -356,7 +356,7 @@ export default function UserApply() {
 
           {/* File attachment box */}
           <div className="border-2 border-dashed border-gray-200 rounded-2xl p-5 text-center bg-gray-50/50 hover:bg-white transition cursor-pointer">
-            <FileUp className="w-7 h-7 text-blue-600 mx-auto mb-2" />
+            <FileUp className="w-7 h-7 text-fuchsia-600 mx-auto mb-2" />
             <p className="text-xs font-semibold text-gray-800">
               Đính kèm bản chụp Học bạ THPT & Mặt trước CCCD
             </p>
@@ -380,7 +380,7 @@ export default function UserApply() {
           </button>
           <button
             type="submit"
-            className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-xs shadow-md shadow-blue-500/20 transition cursor-pointer flex items-center gap-2"
+            className="px-6 py-2.5 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl font-bold text-xs shadow-md shadow-fuchsia-500/20 transition cursor-pointer flex items-center gap-2"
           >
             <span>Xác Nhận Nộp Hồ Sơ Xét Tuyển</span>
             <ArrowRight className="w-4 h-4" />

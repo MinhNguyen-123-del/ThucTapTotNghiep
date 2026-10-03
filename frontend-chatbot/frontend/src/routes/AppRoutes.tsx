@@ -40,7 +40,7 @@ function PortalRedirect() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-900 text-white">
-        <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-8 h-8 border-4 border-fuchsia-500 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -96,7 +96,9 @@ export default function AppRoutes() {
       <Route
         path="/user"
         element={
-          <ProtectedRoute allowedRoles={["user", "admin", "manager"]}>
+          <ProtectedRoute
+  allowedRoles={["user", "student", "admin", "manager"]}
+>
             <UserLayout />
           </ProtectedRoute>
         }

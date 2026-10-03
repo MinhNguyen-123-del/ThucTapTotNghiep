@@ -70,7 +70,7 @@ export default function ResetPassword() {
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
                 placeholder="Nhập mật khẩu mới"
-                className="w-full bg-[#1b1c1f] border border-[#37383d] rounded-xl px-3.5 py-3 text-white focus:border-blue-500 outline-none"
+                className="w-full bg-[#1b1c1f] border border-[#37383d] rounded-xl px-3.5 py-3 text-white focus:border-fuchsia-500 outline-none"
               />
               <button
                 type="button"
@@ -90,7 +90,7 @@ export default function ResetPassword() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Nhập lại mật khẩu mới"
-                className="w-full bg-[#1b1c1f] border border-[#37383d] rounded-xl px-3.5 py-3 text-white focus:border-blue-500 outline-none"
+                className="w-full bg-[#1b1c1f] border border-[#37383d] rounded-xl px-3.5 py-3 text-white focus:border-fuchsia-500 outline-none"
               />
               <button
                 type="button"
@@ -105,14 +105,14 @@ export default function ResetPassword() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition cursor-pointer mt-4"
+            className="w-full py-3 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold rounded-xl transition cursor-pointer mt-4"
           >
             {loading ? "Đang xử lý..." : "Lưu mật khẩu mới"}
           </button>
         </form>
 
         <div className="mt-6 text-center">
-          <Link to="/login" className="text-xs text-blue-400 hover:underline">
+          <Link to="/login" className="text-xs text-pink-400 hover:underline">
             ← Quay lại trang đăng nhập
           </Link>
         </div>
